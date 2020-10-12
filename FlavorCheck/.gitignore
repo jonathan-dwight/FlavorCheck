@@ -18,7 +18,7 @@ bundle.js.map
 /yarn-error.log
 /public/assets
 .byebug_history
-/app/models/user
+/app/models/user.rb
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 # Ignore application configuration
