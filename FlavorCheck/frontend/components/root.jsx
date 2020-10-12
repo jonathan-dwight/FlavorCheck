@@ -1,17 +1,17 @@
-// import React from "react";
-// import { Provider } from "react-redux";
-// import { HashRouter } from "react-router-dom";
-// import App from "./App";
+import React from "react";
+import { Provider } from "react-redux";
+import { HashRouter } from "react-router-dom";
+import App from "./App";
 
-// const Root = ({ store }) => {
-//     return (
-//         <Provider store={store}>
-//             <HashRouter>
-//                 <App />
-//             </HashRouter>
+const Root = ({ store }) => {
+    return (
+        <Provider store={store}>
+            <HashRouter>
+                <App />
+            </HashRouter>
 
-//         </Provider>
-//     )
-// }
+        </Provider>
+    )
+}
 
-// export default Root;
+export default Root;

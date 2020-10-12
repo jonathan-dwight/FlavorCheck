@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Root from "./components/root"
 import { signup, login, logout } from "./actions/session_actions"
 import configureStore from "./store/store"
 
@@ -7,7 +8,7 @@ import configureStore from "./store/store"
 document.addEventListener("DOMContentLoaded", () => {
     let store = configureStore();
     const root = document.getElementById("root");
-    ReactDOM.render(<h3>WELCOME TO FLAVORCHECK</h3>, root);
+    ReactDOM.render(<Root store={store}/>, root);
 
     window.signup = signup;
     window.login = login;
