@@ -25,7 +25,6 @@ class Api::SessionsController < ApplicationController
             # leave in bracket because we would potentially iterate over errors
         end
     end
-
 end
 
 
