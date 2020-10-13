@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
-import Splash from "./splash";
+import Home from "./home";
 import { logout } from "../../actions/session_actions";
-import { openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     let sessionId = state.session.id
     return ({
         user: state.entities.users[sessionId]
@@ -12,10 +11,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        openModal: (modal) => dispatch(openModal(modal)),
         logout: () => dispatch(logout())
     })
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
