@@ -1,0 +1,118 @@
+ .login-form-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ .login-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ .login-input {
+    border: #666666 1px solid;
+    border-radius: 3px;
+    padding: 2px 2px 4px 2px;
+    display: flex;
+    align-content: center;
+    box-shadow: 1px 1px 1px grey;
+    font-weight: 500;
+    color: black;
+    margin: 2% 0%;
+    width: 97%;
+    height: 20px;
+    line-height: 5px;
+    border-radius: 3px;
+    text-align: center;
+ }
+
+ .login-form-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   outline: 1px solid black;
+   padding: 20px;
+   background: white;
+   position: relative;
+   border-radius: 3px;
+   width: 310px;
+   background-color: whitesmoke;
+ }
+
+ .session-submit {
+    font-family: 'Helvetica', sans-serif; 
+    font-weight: bold;
+    font-size: 16px;
+    color:white;
+    background-color: #fc0;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+    margin: 2% 0%;
+    width: 99%;
+ }
+ 
+ .header-button {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px; 
+    color: white;
+    background-color: #1E90FF;
+    width: 80px;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 7px;
+    margin: 2px;
+ }
+
+ .header-modal {
+    font-family: 'Helvetica', sans-serif; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bolder;
+ }
+
+ .errors {
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    background-color: #d3615d;
+    border-bottom-style: none;
+    width: 99%;
+    padding: 1px 1px 2px 1px;
+ }
+
+ .modal-background {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.7);
+   z-index: 10;
+ }
+
+ .modal-child {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .close-x {
+    font-family: 'Helvetica', sans-serif;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: grey;
+    cursor: pointer;
+ }
+
+ .close-x:hover {
+     color:black;
+     font-weight: bold;
+ }
