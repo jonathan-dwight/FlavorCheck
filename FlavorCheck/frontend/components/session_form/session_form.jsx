@@ -38,36 +38,27 @@ class SessionForm extends React.Component {
     }
 
     componentWillUnmount() {
-        return dispatch(this.props.clearErrors())
+        return (this.props.clearErrors())
     }
 
     render() {
         
         let errors = this.props.errors.map((el, idx) => {
-            return <li key={idx}>{el}</li>
+            return <div className="errors" key={idx}>{el}</div>
         })
 
         const emailInput = (this.props.formType === "login") ? null : (
-            <label>Email:
-                <input type="text" onChange={this.handleInput("email")} value={this.state.email} className="login-input" />
+            <label>
+                <input type="text" onChange={this.handleInput("email")} value={this.state.email} className="login-input" placeholder="E-mail"/>
             </label>
         );
 
         const nameInput = (this.props.formType === "login") ? null : (
-            <label>Name:
-                <input type="text" onChange={this.handleInput("fullname")} value={this.state.fullname} className="login-input"/>
+            <label>
+                <input type="text" onChange={this.handleInput("fullname")} value={this.state.fullname} className="login-input" placeholder="Name"/>
             </label>
         );
 
-        // const buttonLog = (this.props.formType === "login") ? (
-        //     <Link to="/signup" >
-        //         <button>Sign Up!</button>
-        //     </Link >
-        // ) : (
-        //         <Link to="/login" >
-        //             <button>Log In!</button>
-        //         </Link >
-        //     );
 
         let check;
 
@@ -76,21 +67,21 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome To FlavorCheck!
-                    Please {this.props.formType} or {this.props.otherForm}
+                    {this.props.otherForm}
+                    {/* Please {this.props.formType} or {this.props.otherForm} */}
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
-                    <h2>{header}</h2>
+                    <h2 className="header-modal">Welcome To Flavortown!!</h2>
                     {nameInput}
-                    <label>Username:
-                        <input type="text" onChange={this.handleInput("username")} value={this.state.username} className="login-input" />
+                    <label>
+                        <input type="text" onChange={this.handleInput("username")} value={this.state.username} className="login-input" placeholder="Username"/>
                     </label>
                     {emailInput}
-                    <label>Password:
-                        <input type="password" onChange={this.handleInput("password")} value={this.state.password} className="login-input"/>
+                    <label>
+                        <input type="password" onChange={this.handleInput("password")} value={this.state.password} className="login-input" placeholder="Password"/>
                     </label>
                     {errors}
-                    <input type="submit" className="session-submit" value={this.props.formType}/>
+                    <input type="submit" className="session-submit" value={this.props.formType.toUpperCase()}/>
                 </form>
             </div>
         )

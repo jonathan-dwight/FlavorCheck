@@ -46,6 +46,14 @@ class User < ApplicationRecord
         self.session_token
     end
 
+
+    # def custom_errors
+    #     user.errors.add(:fullname, "Name can't be blank!")
+    #     user.errors.add(:username, "Username can't be blank!")
+    #     user.errors.add(:email, "Email can't be blank!")
+    #     user.errors.add(:password, "Password - mimiumum 6 characters")
+    # end
+
     private
     
     def ensure_session_token

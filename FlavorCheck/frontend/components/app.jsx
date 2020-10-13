@@ -13,7 +13,6 @@ const App = () => {
                 <h1>FlavorCheck</h1>
                 <ProtectedRoute exact path="/home" component={HomeContainer} />
                 <AuthRoute exact path="/" component={SplashContainer} />
-                {/* this will become a protected route */}
             </header>
         </div>
 
