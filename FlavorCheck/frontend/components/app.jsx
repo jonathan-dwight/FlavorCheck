@@ -3,16 +3,18 @@ import Modal from "./modal/modal"
 import SplashContainer from "./splash/splash_container"
 import HomeContainer from "./home/home_container"
 import { AuthRoute, ProtectedRoute } from ".././util/route_util"
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 const App = () => {
     return (
         <div>
             <Modal />
             <header>
-                <h1>FlavorCheck</h1>
-                <ProtectedRoute exact path="/home" component={HomeContainer} />
-                <AuthRoute exact path="/" component={SplashContainer} />
+                {/* <h1>FlavorCheck</h1> */}
+                <Switch>
+                    <ProtectedRoute exact path="/home" component={HomeContainer} />
+                    <AuthRoute exact path="/" component={SplashContainer} />
+                </Switch>
             </header>
         </div>
 

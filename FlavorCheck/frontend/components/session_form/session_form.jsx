@@ -65,8 +65,8 @@ class SessionForm extends React.Component {
         
         let checkHead;
         const title = (this.props.formType === "login") ? (
-            checkHead = "Your Flavor Destination Awaits"
-            ) : (checkHead = "Experience The Flavor Check")
+            checkHead = "Your Flavor Destination Awaits 🤤"
+        ) : (checkHead = "Experience The Flavor Check 😏")
         
         return (
             <div className="login-form-container">
