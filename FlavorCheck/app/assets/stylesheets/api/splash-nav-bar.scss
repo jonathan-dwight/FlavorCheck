@@ -9,7 +9,7 @@
 
 .login-splash {
     background-color: transparent;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: medium;
     border: 2px solid #fff;
     color: #fff;
@@ -23,7 +23,7 @@
 
 .signup-splash {
     background-color: transparent;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: medium;
     border: 2px solid #fff;
     color: #fff;
@@ -38,6 +38,7 @@
 .signup-splash:hover {
     color: black;
     border-color: black;
+    cursor: pointer;
 
 }
 
@@ -45,5 +46,6 @@
 .login-splash:hover {
     color: black;
     border-color: black;
+    cursor: pointer;
 }
 

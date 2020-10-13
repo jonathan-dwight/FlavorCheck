@@ -4,7 +4,6 @@ import SessionForm from "./session_form"
 import { signup, clearErrors } from "../../actions/session_actions";
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-//ownProps will come from when we set up the route
 const mapStateToProps = (state, ownProps) => {
     let errors = state.errors.session
 
@@ -24,7 +23,6 @@ const mapDispatchToProps = (dispatch) => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        demoLogin: (user) => dispatch(login(user))
     })
 }
 
