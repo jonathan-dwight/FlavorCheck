@@ -32,16 +32,16 @@
 en:
   hello: "Hello world"
 
-  en:  
-  activerecord:
-    models: 
-      user: "Customer"
-    attributes:
-      user:
-        email: "Email address"
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: "cannot be empty"
+  # en:  
+  # activerecord:
+  #   models: 
+  #     user: "Customer"
+  #   attributes:
+  #     user:
+  #       email: "Email address"
+  #   errors:
+  #     models:
+  #       user:
+  #         attributes:
+  #           email:
+  #             blank: "cannot be empty"

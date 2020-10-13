@@ -5,7 +5,6 @@ import { login, clearErrors } from "../../actions/session_actions";
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 
-//ownProps will come from when we set up the route
 const mapStateToProps = (state, ownProps) => {
     let errors = state.errors.session
 

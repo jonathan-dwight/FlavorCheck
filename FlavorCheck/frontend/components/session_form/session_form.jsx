@@ -49,39 +49,56 @@ class SessionForm extends React.Component {
 
         const emailInput = (this.props.formType === "login") ? null : (
             <label>
-                <input type="text" onChange={this.handleInput("email")} value={this.state.email} className="login-input" placeholder="E-mail"/>
+                <input type="text" onChange={this.handleInput("email")} 
+                value={this.state.email} className="login-input" 
+                placeholder="E-mail"/>
             </label>
         );
 
         const nameInput = (this.props.formType === "login") ? null : (
             <label>
-                <input type="text" onChange={this.handleInput("fullname")} value={this.state.fullname} className="login-input" placeholder="Name"/>
+                <input type="text" onChange={this.handleInput("fullname")} 
+                value={this.state.fullname} className="login-input" 
+                placeholder="Name"/>
             </label>
         );
-
-
-        let check;
-
-        const header = (this.props.formType === "login") ? check = "Log In!" : check = "Sign Up!"
-
+        
+        let checkHead;
+        const title = (this.props.formType === "login") ? (
+            checkHead = "Your Flavor Destination Awaits"
+            ) : (checkHead = "Experience The Flavor Check")
+        
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    {this.props.otherForm}
-                    {/* Please {this.props.formType} or {this.props.otherForm} */}
+
+                    <div>
+                        {this.props.otherForm}
+                        <button className="header-button">Demo User</button>
+                    </div>
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
-                    <h2 className="header-modal">Welcome To Flavortown!!</h2>
+                    <h2 className="header-modal">{checkHead}</h2>
                     {nameInput}
+
                     <label>
-                        <input type="text" onChange={this.handleInput("username")} value={this.state.username} className="login-input" placeholder="Username"/>
+                        <input type="text" onChange={this.handleInput("username")} 
+                        value={this.state.username} className="login-input" 
+                        placeholder="Username"/>
                     </label>
+
                     {emailInput}
+
                     <label>
-                        <input type="password" onChange={this.handleInput("password")} value={this.state.password} className="login-input" placeholder="Password"/>
+                        <input type="password" onChange={this.handleInput("password")} 
+                        value={this.state.password} className="login-input" 
+                        placeholder="Password"/>
                     </label>
+
                     {errors}
-                    <input type="submit" className="session-submit" value={this.props.formType.toUpperCase()}/>
+
+                    <input type="submit" className="session-submit" 
+                    value={this.props.formType.toUpperCase()}/>
                 </form>
             </div>
         )
