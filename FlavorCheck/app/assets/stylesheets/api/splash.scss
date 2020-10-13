@@ -1,7 +1,36 @@
 .splash img {
-    height: 800px;
+    height: 850px;
     top: -80px;
-    width: 100%; 
+    width: 100%;
     z-index: -1;
     position: absolute;
+ }
+
+ .splash-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    width: 40%;
+    vertical-align: middle;
+    position: relative;
+    height: 550px;
+    padding-left: 3%;
+    padding-right: 3%;
+ }
+
+ .splash-header img {
+     height: 275px;
+     width: 275px;
+ }
+ 
+ .splash-header-text {
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 600;
+    align-self: center;
+    padding-top: 10px;
+    font-size: 2.2rem;
+    text-align: center;
  }

@@ -2,22 +2,6 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 
 
-// const Splash = (props) => {
-//     const sessionLinks = (
-//         <nav className="login-signup">
-//             <button onClick={() => props.openModal('login')}>Login</button>
-//             <button onClick={() => props.openModal('signup')}>Signup</button>
-//         </nav>
-//     );
-//     return (
-//         props.user ? <Redirect to="/home"/> : sessionLinks
-//     )
-// }
-
-// export default Splash;
-
-//is it because its not a class component???
-
 class Splash extends React.Component {
     constructor(props) { 
         super(props)
@@ -38,6 +22,10 @@ class Splash extends React.Component {
                     </div>
                     <div className="login-signup-box">
                         {sessionLinks}
+                    </div>
+                    <div className="splash-header">
+                        <img src="/assets/flavortown-icon.png" />
+                        <h2 className="splash-header-text">Discover and share your favorite burger.</h2>
                     </div>
 
                 </>

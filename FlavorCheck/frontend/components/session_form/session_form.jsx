@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
             fullname: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
   
     }
 
@@ -34,8 +35,44 @@ class SessionForm extends React.Component {
             email: "",
             fullname: ""
         });
-
     }
+
+    demoLogin(e) {
+        e.preventDefault()
+        const demo = { username: "demo_user", password: "password"}
+        const speed = 100;
+    
+        if (this.state.username !== demo.username) {
+            const inputUsername = setInterval(() => {
+                if(this.state.username !== demo.username) {
+                    const temp = demo.username.slice(0, this.state.username.length + 1);
+                    this.setState({username: temp})
+                } else {
+                    clearInterval(inputUsername);
+                    animatePW();
+                }
+            }, speed)
+        }
+
+        const animatePW = () => {
+            if (this.state.password !== demo.password) {
+                const inputPassword = setInterval(() => {
+                    if (this.state.password !== demo.password) {
+                        const temp = demo.password.slice(0, this.state.password.length + 1);
+                        this.setState({ password: temp });
+                    } else {
+                        clearInterval(inputPassword);
+                        this.props.demoLogin(demo).then(
+                            () => {
+                                this.props.closeModal()
+                                this.props.history.push("/home")
+                            })
+                    }
+                }, speed);
+            }
+        }
+
+     }
 
     componentWillUnmount() {
         return (this.props.clearErrors())
@@ -68,13 +105,20 @@ class SessionForm extends React.Component {
             checkHead = "Your Flavor Destination Awaits 🤤"
         ) : (checkHead = "Experience The Flavor Check 😏")
         
+        let demoButton;
+        (this.props.formType === "signup") ? (
+            demoButton = null
+        ) : (
+            demoButton = <button className="header-button" onClick={this.demoLogin}>Demo User</button>
+        )
+        
         return (
             <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+                <form className="login-form-box" onSubmit={this.handleSubmit} >
 
                     <div>
                         {this.props.otherForm}
-                        <button className="header-button">Demo User</button>
+                        {demoButton}
                     </div>
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
