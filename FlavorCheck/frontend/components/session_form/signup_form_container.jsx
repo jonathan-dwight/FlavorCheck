@@ -1,6 +1,8 @@
+import React from 'react';
 import { connect } from "react-redux";
 import SessionForm from "./session_form"
 import { signup, clearErrors } from "../../actions/session_actions";
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 //ownProps will come from when we set up the route
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +17,13 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         processForm: (form) => dispatch(signup(form)),
-        clearErrors: () => dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors()),
+        otherForm: (
+            <button onClick={() => dispatch(openModal('login'))}>
+                Login
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal())
     })
 }
 

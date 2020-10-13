@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -24,8 +24,10 @@ class SessionForm extends React.Component {
         e.preventDefault();
         let user = this.state;
         this.props.processForm(user).then(
-            () => this.props.history.push("/home")
-        ).fail(() => this.props.history.push(`/${this.props.formType}`))
+            () => {
+                this.props.closeModal()
+                this.props.history.push("/home")
+            })
         this.setState({
             username: "",
             password: "",
@@ -40,54 +42,60 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        
         let errors = this.props.errors.map((el, idx) => {
             return <li key={idx}>{el}</li>
         })
 
         const emailInput = (this.props.formType === "login") ? null : (
             <label>Email:
-                <input type="text" onChange={this.handleInput("email")} value={this.state.email} />
+                <input type="text" onChange={this.handleInput("email")} value={this.state.email} className="login-input" />
             </label>
         );
 
         const nameInput = (this.props.formType === "login") ? null : (
             <label>Name:
-                <input type="text" onChange={this.handleInput("fullname")} value={this.state.fullname} />
+                <input type="text" onChange={this.handleInput("fullname")} value={this.state.fullname} className="login-input"/>
             </label>
         );
 
-        const buttonLog = (this.props.formType === "login") ? (
-            <Link to="/signup" >
-                <button>Sign Up!</button>
-            </Link >
-        ) : (
-                <Link to="/login" >
-                    <button>Log In!</button>
-                </Link >
-            );
+        // const buttonLog = (this.props.formType === "login") ? (
+        //     <Link to="/signup" >
+        //         <button>Sign Up!</button>
+        //     </Link >
+        // ) : (
+        //         <Link to="/login" >
+        //             <button>Log In!</button>
+        //         </Link >
+        //     );
 
         let check;
 
         const header = (this.props.formType === "login") ? check = "Log In!" : check = "Sign Up!"
 
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div className="login-form-container">
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                    Welcome To FlavorCheck!
+                    Please {this.props.formType} or {this.props.otherForm}
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
 
-                {buttonLog}
-                <h2>{header}</h2>
-                {nameInput}
-                <label>Username:
-                    <input type="text" onChange={this.handleInput("username")} value={this.state.username} />
-                </label>
-                {emailInput}
-                <label>Password:
-                    <input type="password" onChange={this.handleInput("password")} value={this.state.password} />
-                </label>
-                {errors}
-                <input type="submit" />
-            </form>
+                    <h2>{header}</h2>
+                    {nameInput}
+                    <label>Username:
+                        <input type="text" onChange={this.handleInput("username")} value={this.state.username} className="login-input" />
+                    </label>
+                    {emailInput}
+                    <label>Password:
+                        <input type="password" onChange={this.handleInput("password")} value={this.state.password} className="login-input"/>
+                    </label>
+                    {errors}
+                    <input type="submit" className="session-submit" value={this.props.formType}/>
+                </form>
+            </div>
         )
+
     }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
