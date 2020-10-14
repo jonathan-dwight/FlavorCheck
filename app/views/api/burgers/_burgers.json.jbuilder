@@ -1,0 +1,1 @@
+json.extract! burger, :id, :name, :rating, :description, :picture, :restaurant_id, :author_id

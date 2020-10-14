@@ -18,3 +18,17 @@ user4 = User.create(username: "jackpack", name: "Jacky Li", password: "password"
 user5 = User.create(username: "petey", name: "Peter Min", password: "password", email: "peter@aa.io")
 user6 = User.create(username: "cheetahluva", name: "Chris Lee", password: "password", email: "chris@aa.io")
 user7 = User.create(username: "raveboi", name: "Jon Siu", password: "password", email: "jon@aa.io")
+
+restaurant1 = Restaurant.create(name: "McDonald's")
+restaurant2 = Restaurant.create(name: "In-N-Out")
+restaurant3 = Restaurant.create(name: "Shake Shack")
+
+burger1 = Burger.create(name: "McDouble", rating: 3, description: "It was really good with Mac sauce!!", restaurant_id: restaurant1.id, author_id: user2.id)
+burger2 = Burger.create(name: "Double Double", rating: 4, description: "First time having it! It was AMAZING!!", restaurant_id: restaurant2.id, author_id: user3.id)
+burger3 = Burger.create(name: "ShackBurger", rating: 2, description: "It was okay.... Not worth the price...", restaurant_id: restaurant3.id, author_id: user4.id)
+
+
+
+
+
+
