@@ -12,9 +12,10 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+# presence: { message: "Pick a better name"} - custom errors
 class User < ApplicationRecord
     validates :username, :session_token, presence: true, uniqueness: true
-    validates :fullname, :email, presence: true
+    validates :name, :email, presence: true
     validates :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
@@ -45,14 +46,6 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
-
-
-    # def custom_errors
-    #     user.errors.add(:fullname, "Name can't be blank!")
-    #     user.errors.add(:username, "Username can't be blank!")
-    #     user.errors.add(:email, "Email can't be blank!")
-    #     user.errors.add(:password, "Password - mimiumum 6 characters")
-    # end
 
     private
     

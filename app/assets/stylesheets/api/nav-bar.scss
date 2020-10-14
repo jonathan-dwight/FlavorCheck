@@ -26,6 +26,7 @@
 
 .flavor-check:hover {
     color: black;
+    transition: .5s;
 }
 
 .flavor-town {
@@ -40,6 +41,7 @@
 
 .flavor-town:hover {
     color: black;
+    transition: .5s;
 }
 
 .avatar {
@@ -75,4 +77,5 @@
     background-color: white;
     transition: .3s;
     cursor: pointer;
+    transition: .5s;
 }

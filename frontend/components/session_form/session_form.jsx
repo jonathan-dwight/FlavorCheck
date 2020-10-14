@@ -102,33 +102,37 @@ class SessionForm extends React.Component {
         let checkHead;
         const title = (this.props.formType === "login") ? (
             checkHead = "Your Flavor Destination Awaits 🤤"
-        ) : (checkHead = "Experience The Flavor Check 😏")
+        ) : (checkHead = "Experience The Flavors 😏")
         
         let demoButton;
         (this.props.formType === "signup") ? (
             demoButton = null
         ) : (
-            demoButton = <button className="header-button" onClick={this.demoLogin}>Demo User</button>
+            demoButton = <p className="header-button" onClick={this.demoLogin}>DemoUser</p>
         )
         
+        let pretext;
+        (this.props.formType === "signup") ? pretext = "Already enjoying flavors?" : pretext = "New around here?"
+
         return (
             <div className="login-form-container">
                 <form className="login-form-box" onSubmit={this.handleSubmit} >
 
-                    <div>
-                        {this.props.otherForm}
-                        {demoButton}
-                    </div>
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
-                    <h2 className="header-modal">{checkHead}</h2>
-                    {nameInput}
+                    <div className="header-title">
+                        <h1>FLAVORCHECK</h1>
+                        <p className="header-slogan">Eat Socially</p>
+                    </div>
+                    <p className="header-text">{checkHead}</p>
 
                     <label>
-                        <input type="text" onChange={this.handleInput("username")} 
+                        <input autoFocus type="text" onChange={this.handleInput("username")} 
                         value={this.state.username} className="login-input" 
                         placeholder="Username"/>
                     </label>
+
+                    {nameInput}
 
                     {emailInput}
 
@@ -142,6 +146,14 @@ class SessionForm extends React.Component {
 
                     <input type="submit" className="session-submit" 
                     value={this.props.formType.toUpperCase()}/>
+
+
+                    <div className="session-footer">
+                    <p className="pre-text">{pretext}</p>
+                        {this.props.otherForm}
+                        {demoButton}
+                    </div>
+
                 </form>
             </div>
         )
