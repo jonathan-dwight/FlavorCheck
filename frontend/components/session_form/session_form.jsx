@@ -85,7 +85,7 @@ class SessionForm extends React.Component {
 
         const emailInput = (this.props.formType === "login") ? null : (
             <label>
-                <input type="text" onChange={this.handleInput("email")} 
+                <input type="email" onChange={this.handleInput("email")} 
                 value={this.state.email} className="login-input" 
                 placeholder="E-mail"/>
             </label>
