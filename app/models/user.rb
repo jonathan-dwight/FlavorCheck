@@ -3,8 +3,7 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  fname           :string           not null
-#  lname           :string           not null
+#  name            :string           not null
 #  email           :string           not null
 #  username        :string           not null
 #  password_digest :string           not null
@@ -12,7 +11,6 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-# presence: { message: "Pick a better name"} - custom errors
 class User < ApplicationRecord
     validates :username, :session_token, presence: true, uniqueness: true
     validates :name, :email, presence: true
@@ -22,6 +20,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_many :posts,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Burger
 
     def self.generate_session_token
         SecureRandom::urlsafe_base64

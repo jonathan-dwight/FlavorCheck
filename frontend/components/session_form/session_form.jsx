@@ -36,6 +36,8 @@ class SessionForm extends React.Component {
         });
     }
 
+    //BORROWED DemoLogin Logic from Christopher Thompson -- aA SF December 2019
+
     demoLogin(e) {
         e.preventDefault()
         const demo = { username: "demo_user", password: "password"}

@@ -1,0 +1,2 @@
+module Api::BurgersHelper
+end

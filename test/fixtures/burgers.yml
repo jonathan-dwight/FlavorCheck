@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: burgers
+#
+#  id            :bigint           not null, primary key
+#  name          :string           not null
+#  rating        :integer          not null
+#  description   :text
+#  picture       :string
+#  restaurant_id :integer          not null
+#  author_id     :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+one:
+  name: MyString
+  rating: 1
+  description: MyText
+  picture: MyString
+  restaurant_id: 1
+  author_id: 1
+
+two:
+  name: MyString
+  rating: 1
+  description: MyText
+  picture: MyString
+  restaurant_id: 1
+  author_id: 1
