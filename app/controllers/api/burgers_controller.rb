@@ -18,7 +18,7 @@ class Api::BurgersController < ApplicationController
 
     def update
         @burger  = current_user.posts.find_by(id: params[:id])
-        # @burger = Burger.find_by(id: params[:id])
+        # @burger = Burger.find_by(id: params[:id]) -- tested
         if @burger.update(burger_params) && @burger
             render :show
         else 
