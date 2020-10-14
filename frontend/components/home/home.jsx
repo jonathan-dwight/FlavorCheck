@@ -15,8 +15,9 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <h2>Welcome Back!! {this.props.user.username}</h2>
-                <button onClick={this.handleClick}>Logout</button>
+                <p>HELLOW WORLD</p>
+                {/* <h2>Welcome Back!! {this.props.user.username}</h2> */}
+                {/* <button onClick={this.handleClick}>Logout</button> */}
             </>
         )
     }
