@@ -24,24 +24,24 @@ class Splash extends React.Component {
             this.props.user ? <Redirect to="/home" /> : (
                 <>
                    <div className="splash">
-                       <img src="/assets/burgerhomepage.png"/>
+                        <img src={window.burgerhomepage}/>
                     </div>
                     <div className="login-signup-box">
                         {sessionLinks}
                     </div>
                     <div className="splash-header">
-                        <img src="/assets/flavortown-icon.png" />
+                        <img src={window.flavortownicon} />
                         <h2 className="splash-header-text">Discover and share your favorite burger.</h2>
                     </div>
                     <div className="features">
                         <div className="main-feature">
-                            <img src="/assets/rating.png" alt=""/>
+                            <img src={window.rating} alt=""/>
                                 <div id="text-feature"></div>
                                 <h4 className="text-feature-title">CHECK IN AND RATE BURGERS</h4>
                                 <p className="text-feature-text">{text1}</p>
                         </div>
                         <div className="main-feature">
-                            <img src="/assets/rating.png" alt="" />
+                            <img src={window.rating} alt="" />
                                 <div id="text-feature"></div>
                                 <h4 className="text-feature-title">CHECK IN AND RATE BURGERS</h4>
                                 <p className="text-feature-text">{text1}</p>
