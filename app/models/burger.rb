@@ -16,6 +16,8 @@ class Burger < ApplicationRecord
     validates :name, presence: true
     validates :rating, inclusion: {in: [1, 2, 3, 4, 5]}
 
+    has_one_attached :photo
+
     belongs_to :restaurant,
         primary_key: :id,
         foreign_key: :restaurant_id,
