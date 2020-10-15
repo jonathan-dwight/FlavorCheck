@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
             username: "",
             password: "",
             email: "",
-            fullname: ""
+            name: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
@@ -29,10 +29,10 @@ class SessionForm extends React.Component {
                 this.props.history.push("/home")
             })
         this.setState({
-            username: "",
+            username: this.state.username,
             password: "",
-            email: "",
-            fullname: ""
+            email: this.state.email,
+            name: this.state.name
         });
     }
 
@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
 
         const emailInput = (this.props.formType === "login") ? null : (
             <label>
-                <input type="email" onChange={this.handleInput("email")} 
+                <input type="text" onChange={this.handleInput("email")} 
                 value={this.state.email} className="login-input" 
                 placeholder="E-mail"/>
             </label>
@@ -95,8 +95,8 @@ class SessionForm extends React.Component {
 
         const nameInput = (this.props.formType === "login") ? null : (
             <label>
-                <input type="text" onChange={this.handleInput("fullname")} 
-                value={this.state.fullname} className="login-input" 
+                <input type="text" onChange={this.handleInput("name")} 
+                value={this.state.name} className="login-input" 
                 placeholder="Name"/>
             </label>
         );
@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
         (this.props.formType === "signup") ? (
             demoButton = null
         ) : (
-            demoButton = <p className="header-button" onClick={this.demoLogin}>DemoUser</p>
+            demoButton = <button className="demo-button" onClick={this.demoLogin}>DemoUser</button>
         )
         
         let pretext;

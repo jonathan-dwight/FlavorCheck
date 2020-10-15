@@ -144,7 +144,7 @@
 
  .pre-text {
    font-family: 'Helvetica', sans-serif;
-   margin-top: 4px;
+   margin-top: 7px;
    color: #667;
    font-weight: 500;
 
@@ -152,7 +152,7 @@
 
  .header-button {
    font-family: 'Helvetica', sans-serif;
-   padding-top: 5px;
+   padding-top: 7px;
    font-weight: 500;
    color: #c60;
    width: 67px;
@@ -162,4 +162,28 @@
  .header-button:hover {
     font-weight: 550;
     cursor: pointer;
+ }
+
+
+ .demo-button {
+  background-color: blue;
+  color: white;
+  border-color: black;
+  font-family: 'Helvetica', sans-serif;
+  font-size: medium;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  width: 93px;
+  height: 30px;
+  margin-bottom: 10px;
+ }
+
+ .demo-button:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    border-color: black;
  }
