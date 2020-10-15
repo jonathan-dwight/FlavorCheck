@@ -33,15 +33,14 @@ class Api::BurgersController < ApplicationController
         end
     end
 
-
+    #have to find a way to only have a burger destroyed by current user
     def destroy
         @burger = Burger.find_by(id: params[:id])
-        
-        if @burger
+        if @burger # && burger.author_id == current_user.id
             @burger.destroy
             render json: ["We will miss your flavor :("]
         else  
-            render :show
+            render json: ["Burger does not exist"], status: 422
         end
     end
 

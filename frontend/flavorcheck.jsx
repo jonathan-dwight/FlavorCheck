@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store"
-import * as BurgerAPI from "./util/burger_api_util"
+import * as BurgerActions from "./actions/burger_actions"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.BurgerAPI = BurgerAPI;
+    window.BurgerActions = BurgerActions;
 })
