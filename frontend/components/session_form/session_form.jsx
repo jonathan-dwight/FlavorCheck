@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
         (this.props.formType === "signup") ? (
             demoButton = null
         ) : (
-            demoButton = <button className="demo-button" onClick={this.demoLogin}>DemoUser</button>
+            demoButton = <button className="demo-button" onClick={this.demoLogin}>DEMO</button>
         )
         
         let pretext;
