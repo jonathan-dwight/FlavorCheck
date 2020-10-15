@@ -5,6 +5,13 @@ class Api::BurgersController < ApplicationController
         render :show
     end
 
+
+    def index
+        @burgers = Burger.all 
+        render :index
+    end
+    
+
     def create
         @burger = Burger.new(burger_params)
         
@@ -15,7 +22,7 @@ class Api::BurgersController < ApplicationController
         end
     end
 
-
+    #WORRY ABOUT THIS LATER 
     def update
         @burger  = current_user.posts.find_by(id: params[:id])
         # @burger = Burger.find_by(id: params[:id]) -- tested
@@ -30,7 +37,7 @@ class Api::BurgersController < ApplicationController
     def destroy
         @burger = Burger.find_by(id: params[:id])
         
-        if @burger && (@burger.author_id == current_user.id)
+        if @burger
             @burger.destroy
             render json: ["We will miss your flavor :("]
         else  
@@ -38,11 +45,6 @@ class Api::BurgersController < ApplicationController
         end
     end
 
-
-    def index
-        @burgers = Burger.all 
-        render :index
-    end
 
 
     private
