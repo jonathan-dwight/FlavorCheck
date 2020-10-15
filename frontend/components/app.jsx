@@ -15,12 +15,14 @@ const App = () => {
                 <ProtectedRoute exact path="/home" component={NavBarContainer} />
                 {/* <ProtectedRoute exact path="/profile" component={NavBarContainer} /> */}
             </header>
+
             <Switch>
                 <ProtectedRoute exact path="/home" component={HomeContainer} />
                 {/* <ProtectedRoute exact path="/profile" component={NavBarContainer} /> */}
                 <AuthRoute exact path="/" component={SplashContainer} />
                 <Redirect to="/"></Redirect>
             </Switch>
+            
             <footer>
                 <FooterLinks />
             </footer>
