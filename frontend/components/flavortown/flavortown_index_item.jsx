@@ -11,8 +11,18 @@ const FlavorTownIndexItem = (props) => {
     let month = months[(props.burger.createdAt.slice(5,7)) -1]
     let day = props.burger.createdAt.slice(9,10)
 
-    let rating = props.burger.rating
-    
+    let ratings = [];
+    for(let i = 0; i < props.burger.rating; i++) {
+        ratings.push(<span key={i} className="fa fa-star checked"></span>)
+    }
+
+    let nonCheck = 5 - props.burger.rating
+    let nonCheckArr = [];
+    for (let i = 0; i < nonCheck; i++) {
+        nonCheckArr.push(<span key={i} className="fa fa-star"></span>)
+    }
+
+
 
     return (
         <div className="global-review"> 
@@ -33,13 +43,15 @@ const FlavorTownIndexItem = (props) => {
                 
                 <div className="content">
                     <h2>{props.burger.description}</h2>
-                    <p>{props.burger.rating}</p>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+
+                    <div className="star-rating">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                        {ratings.map((el) => (el))}
+                        {nonCheckArr.map((el) => (el))}
+                        {/* <p className="star-rating-number">({props.burger.rating}/5)</p> */}
+                        {/* will check if i need something */}
+                    </div>
+
                 </div>
                 {/* this would be burger post image*/}
                 <img className="burger-image" src={window.mcdouble}/>

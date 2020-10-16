@@ -20,13 +20,13 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 700px;
     align-self: center;
     position: relative;
     padding: 16px;
     margin-bottom: 30px;
-    margin-left: 200px;
-    margin-right: 50px;
+    margin-left: 140px;
+ 
 }
 
 .restaurant-list {
@@ -38,14 +38,13 @@
     padding: 16px;
     flex-direction: column;
     position: -webkit-sticky;
-    width: 350px;
+    width: 300px;
     height: max-content;
-    margin-right: 200px;
+    margin-right: 140px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 100px;
-    // position: fixed;
 }
 
 .global-header {
@@ -59,7 +58,7 @@
     margin-bottom: 10px;
     margin-top: 3px;
     font-family: 'Helvetica', sans-serif; 
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1.4em;
 }
 
@@ -131,7 +130,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 5px;
-    font-weight: 430;
+    font-weight: 300;
     
 }
 
@@ -152,7 +151,7 @@
     margin-bottom: 25px;
     color: #999;
     margin-top: 10px;
-    font-size: .7em
+    font-size: .8em
 }
 
 .burger-image {
@@ -190,9 +189,9 @@
 
 .restaurant-list h2 {
     font-family: 'Helvetica', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.2em;
-    padding-bottom: 6px;
+    padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -219,3 +218,13 @@
 .checked {
     color: orange;
 }
+
+.star-rating {
+    display: flex;
+}
+
+.fa {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
