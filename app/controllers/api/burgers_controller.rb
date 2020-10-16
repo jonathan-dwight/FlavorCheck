@@ -7,8 +7,7 @@ class Api::BurgersController < ApplicationController
 
 
     def index
-        @burgers = Burger.all.includes(:author).includes(:restaurant) 
-        #test this - in postMan
+        @burgers = Burger.all.includes(:restaurant).includes(:author)
         render :index
     end
     

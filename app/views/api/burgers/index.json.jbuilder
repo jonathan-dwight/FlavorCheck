@@ -6,7 +6,6 @@ json.burgers do
         end
     end
 end
-#@burger.author
 
 json.users do
     @burgers.each do |burger|

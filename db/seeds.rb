@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Restaurant.destroy_all
+Burger.destroy_all
 
 # ActiveRecord::Base.connection.reset_pk_sequence!('users')
 #  RESETS THE PRIMARY KEY ID

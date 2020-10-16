@@ -7,17 +7,15 @@ class Home extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick() {
-        this.props.logout()
-        this.props.history.push("/")
-    }
+    // handleClick() {
+    //     this.props.logout()
+    //     this.props.history.push("/")
+    // }
 
     render() {
         return (
             <>
                 <p>HELLOW WORLD</p>
-                {/* <h2>Welcome Back!! {this.props.user.username}</h2> */}
-                {/* <button onClick={this.handleClick}>Logout</button> */}
             </>
         )
     }
