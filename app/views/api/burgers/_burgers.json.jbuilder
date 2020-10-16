@@ -1,1 +1,1 @@
-json.extract! burger, :id, :name, :rating, :description, :restaurant_id, :author_id
+json.extract! burger, :id, :name, :rating, :description, :restaurant_id, :author_id, :created_at
