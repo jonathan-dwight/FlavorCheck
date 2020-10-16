@@ -8,7 +8,7 @@ class BurgerForm extends React.Component {
             description: "",
             rating: "",
             restaurant: "",
-            author_id: this.props.user
+            author_id: this.props.user.id
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)

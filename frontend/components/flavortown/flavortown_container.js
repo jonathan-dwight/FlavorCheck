@@ -12,8 +12,7 @@ const mapStateToProps = (state, ownProps) => {
         burgers: Object.values(state.entities.burgers),
         users: state.entities.users,
         restaurants: state.entities.restaurants,
-        // users: Object.keys(state.entities.users).map((id) => { return (state.entities.users[id]) }),
-        // restaurants: Object.keys(state.entities.restaurants).map((id) => { return (state.entities.restaurants[id]) }),
+        restaurantList: Object.values(state.entities.restaurants),
         currentUser: state.entities.users[sessionId]
     })
 }
