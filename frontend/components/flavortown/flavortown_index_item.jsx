@@ -18,8 +18,8 @@ const FlavorTownIndexItem = (props) => {
                     <span className="burger-name-restaurant">{user.username}&nbsp;</span> 
                     is&nbsp;eating&nbsp;a&nbsp; 
                     <p className="burger-name-restaurant">{props.burger.name}&nbsp;</p> 
-                    from
-                    <span className="burger-name-restaurant">&nbsp;{restaurant.name}</span>
+                    from&nbsp;
+                    <span className="burger-name-restaurant">{restaurant.name}</span>
                 </div>
             </div>
             

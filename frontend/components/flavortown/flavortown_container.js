@@ -6,6 +6,7 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+
     let sessionId = state.session.id;
 
     return ({
