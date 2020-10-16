@@ -11,7 +11,7 @@ end
 json.users do
     @burgers.each do |burger|
         json.set! burger.author.id do
-            json.extract! burger.author, :id, :name 
+            json.extract! burger.author, :id, :name , :username
         end
     end
 end

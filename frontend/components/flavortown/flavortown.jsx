@@ -12,23 +12,21 @@ class FlavorTown extends React.Component {
     }
 
     render() {
-        debugger
+
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
         );
-
-        // restaurant = { this.props.restaurant.id }
-        // const burgers = this.props.burgers.map((el) => {
-        //     return <FlavortownIndexItem key={el.id}
-        //         burger={el}  />
-        // })
+        const burgers = this.props.burgers.map((el) => {
+            return <FlavortownIndexItem key={el.id}
+                burger={el}  restaurants={this.props.restaurants} users={this.props.users}/>
+            })
 
         return (
             <>
                 <li>
                     {burgerForm}
-                    {/* {burgers} */}
+                    {burgers}
                 </li>
             </>
         )

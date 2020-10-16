@@ -1,10 +1,11 @@
 import React from "react"
 
 const FlavorTownIndexItem = (props) => {
-    //need to know whow to users name and resturants
+    let user = props.users[props.burger.author_id]
+    let restaurant = props.restaurants[props.burger.restaurant_id]
+
     return (
-        <p>{props.burger.author_id.name} is eating a {props.burger.name}
-            by 
+        <p> {user.username} is eating a {props.burger.name} by {restaurant.name}
         </p>
     )
 }
