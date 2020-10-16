@@ -13,7 +13,7 @@ const FlavorTownIndexItem = (props) => {
                 from
                 <span className="burger-name-restaurant"> {restaurant.name}</span>
             </div>
-            <div class="quote-square"></div> 
+            <div className="quote-square"></div> 
             <div className="content">
             {/* ADD PICTURES */}
                 <h2>{props.burger.description}</h2>

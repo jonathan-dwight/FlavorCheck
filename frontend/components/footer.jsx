@@ -9,10 +9,10 @@ const footerLinks = () => {
     return (
         <>
             <div className="image-box">
-                <a href={linkedIn}>
+                <a href={linkedIn} target="_blank">
                     <img src={window.linkedIn} className="footer-single-1"/>
                 </a>
-                <a href={github}>
+                <a href={github} target="_blank">
                     <img src={window.github} className="footer-single" />
                 </a>
             </div>
