@@ -38,7 +38,7 @@ class FlavorTown extends React.Component {
                     </div>
                 </div>
                 <ul className="restaurant-list">
-                    <h2>Restaurant List</h2>
+                    <h2>Burger Joints</h2>
                     {restaurantList}
                 </ul>
             </div>

@@ -25,7 +25,7 @@ class NavBar extends React.Component {
                         <Link to="/flavortown">
                             <p className="flavor-town">Flavor Town</p>
                         </Link>
-                        <a href={unTappd}>
+                        <a href={unTappd} target="_blank">
                             <p className="flavor-town">Untappd-Site</p>
                         </a>
                     </div>
