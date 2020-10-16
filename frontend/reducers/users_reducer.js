@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions"
+import { RECEIVE_BURGERS } from "../actions/burger_actions"
 
 export default (state = {}, action) => {
     Object.freeze(state);
@@ -8,6 +9,9 @@ export default (state = {}, action) => {
             nextState[action.user.id] = action.user
             return nextState
         // return Object.assign({}, state, {[action.user.id]: action.user})
+        case RECEIVE_BURGERS:
+            nextState = action.payload.users
+            return nextState     
         default:
             return state;
     }

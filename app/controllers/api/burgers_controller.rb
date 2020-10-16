@@ -7,7 +7,8 @@ class Api::BurgersController < ApplicationController
 
 
     def index
-        @burgers = Burger.all 
+        @burgers = Burger.all.includes(:author).includes(:restaurant) 
+        #test this - in postMan
         render :index
     end
     
@@ -49,7 +50,7 @@ class Api::BurgersController < ApplicationController
     private
 
     def burger_params 
-        params.require(:burger).permit(:name, :rating, :description, :picture, :restaurant_id, :author_id)
+        params.require(:burger).permit(:name, :rating, :description, :restaurant_id, :author_id)
     end
 
 

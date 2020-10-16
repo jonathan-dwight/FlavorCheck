@@ -6,7 +6,7 @@ export default (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_BURGERS:
-            nextState = action.burgers
+            nextState = action.payload.burgers
             return nextState;
         case RECEIVE_BURGER:
             nextState[action.burger.id] = action.burger

@@ -9,9 +9,9 @@ export const CLEAR_BURGER_ERRORS = "CLEAR_BURGER_ERRORS"
 
 //work on update later
 
-export const receiveBurgers = (burgers) => ({
+export const receiveBurgers = (payload) => ({
     type: RECEIVE_BURGERS,
-    burgers
+    payload
 })
 
 export const receiveBurger = (burger) => ({

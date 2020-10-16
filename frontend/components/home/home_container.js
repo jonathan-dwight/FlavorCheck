@@ -9,6 +9,9 @@ const mapStateToProps = (state, ownProps) => {
     })
 }
 
+//WE WOULD HAVE AN ACTION CREATOR TO SPECIFY THE PEOPLE FOLLOWING
+// FOR BURGER POST
+
 const mapDispatchToProps = (dispatch) => {
     return ({
         logout: () => dispatch(logout())

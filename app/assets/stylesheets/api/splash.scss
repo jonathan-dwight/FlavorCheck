@@ -1,10 +1,12 @@
 .splash img {
-    display: flex;
-    height: 850px;
-    top: -80px;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
+   display: flex;
+   height: 850px;
+   top: -80px;
+   width: 100%;
+   z-index: -1;
+   position: absolute;
+   // margin-left: auto;
+   // margin-right: auto
  }
 
  .splash-header {
