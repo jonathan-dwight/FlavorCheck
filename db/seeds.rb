@@ -10,7 +10,9 @@ User.destroy_all
 Restaurant.destroy_all
 Burger.destroy_all
 
-# ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('restaurants')
+ActiveRecord::Base.connection.reset_pk_sequence!('burgers')
 #  RESETS THE PRIMARY KEY ID
 
 user1 = User.create(username: "demo_user", name: "Demo User", password: "password", email: "test@aa.io")
