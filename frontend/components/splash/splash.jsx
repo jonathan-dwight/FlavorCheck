@@ -39,7 +39,7 @@ class Splash extends React.Component {
                         {sessionLinks}
                     </div>
                     <div className="splash-header">
-                        <img src={window.flavortownicon} />
+                        <img src={window.burgerking} />
                         <h2 className="splash-header-text">Discover and share your favorite burger.</h2>
                     </div>
                     <div className="features">
