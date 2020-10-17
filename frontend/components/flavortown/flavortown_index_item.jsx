@@ -9,7 +9,7 @@ const FlavorTownIndexItem = (props) => {
 
     let year = props.burger.createdAt.slice(0,4)
     let month = months[(props.burger.createdAt.slice(5,7)) -1]
-    let day = props.burger.createdAt.slice(9,10)
+    let day = props.burger.createdAt.slice(8,10)
 
     let ratings = [];
     for(let i = 0; i < props.burger.rating; i++) {

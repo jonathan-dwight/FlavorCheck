@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render 'api/users/show'
         else
-            render json:["Invalid Flavor Profile!"], status: 422
+            render json:["Flavor Profile Not Found :("], status: 422
         end
     end
 

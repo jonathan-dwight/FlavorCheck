@@ -1,0 +1,25 @@
+.burger-form-box {
+//    display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     outline: 1px solid black;
+//     padding: 20px;
+//     background: white;
+//     position: relative;
+    border-radius: 3px;
+    background-color: whitesmoke;
+    padding: 1vw 2vw;
+    overflow: auto;
+    display: flex;
+    width: 600px;
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    right: 500px;
+}
+
+.inner-burger-form-box {
+    display: flex;
+    
+}

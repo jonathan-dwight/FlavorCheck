@@ -13,6 +13,7 @@ class Api::BurgersController < ApplicationController
     
 
     def create
+        # restaurant = Restaurant.find_by(name: burger[:restaurant])
         @burger = Burger.new(burger_params)
         
         if @burger.save 
