@@ -1,20 +1,28 @@
 import { connect } from "react-redux";
 import Home from "./home";
-import { logout } from "../../actions/session_actions";
+import { fetchBurgers } from "../../actions/burger_actions"
+import { openModal } from '../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
-    let sessionId = state.session.id
+
+    let sessionId = state.session.id;
+
     return ({
-        user: state.entities.users[sessionId]
+        burgers: Object.values(state.entities.burgers),
+        currentUser: state.entities.users[sessionId],
+        restaurants: state.entities.restaurants,
+        users: state.entities.users,
     })
 }
 
-//WE WOULD HAVE AN ACTION CREATOR TO SPECIFY THE PEOPLE FOLLOWING
-// FOR BURGER POST
+// HAVE TO FETCH BURGERS AND DISPLAY EVERYTHING THAT THE USER IS FOLLOWING
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        logout: () => dispatch(logout())
+        openModal: (modal) => (dispatch(openModal(modal))),
+        fetchBurgers: () => (dispatch(fetchBurgers())),
+        fetchRestaurants: () => (dispatch(fetchRestaurants()))
     })
 
 }

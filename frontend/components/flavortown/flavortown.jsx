@@ -43,6 +43,8 @@ class FlavorTown extends React.Component {
                     {restaurantList}
                 </ul>
             </div>
+
+            //NEED TO FIGURE OUT WHY THE IMAGE DOESNT RENDER
         )
     }
 }

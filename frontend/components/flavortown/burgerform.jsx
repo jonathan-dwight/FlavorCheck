@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+
 
 class BurgerForm extends React.Component {
     constructor(props) {
@@ -51,7 +51,6 @@ class BurgerForm extends React.Component {
         } else {
             this.setState({ imageUrl: "", imageFile: null });
         }
-        debugger
     }
     
     handleSubmit(e) {
@@ -67,13 +66,19 @@ class BurgerForm extends React.Component {
         }
         this.props.processForm(formData).then(() => {
             this.props.closeModal()
-        }).fail((resp) => console.log(resp));
+    
+        })
     }
 
     render() {
+ 
         let restaurants = []
         const restaurantMap = this.props.restaurants.map((el) => {
             restaurants.push(<option key={el.id} value={el.name}>{el.name}</option>)
+        })
+
+        let errors = this.props.errors.map((el, idx) => {
+            return <div className="burger-errors" key={idx}>{el}</div>
         })
         return(
             <div className="burger-form-box">
@@ -116,6 +121,7 @@ class BurgerForm extends React.Component {
                             </select>
                         </div>
                         <input type="submit" name="" id=""/>
+                        {errors}
                     </form>
                 </div>
             </div>
