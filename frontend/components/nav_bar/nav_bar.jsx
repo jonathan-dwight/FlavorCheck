@@ -15,6 +15,9 @@ class NavBar extends React.Component {
     render() {
 
         const unTappd = "https://untappd.com/"
+        const linkedIn = "https://www.linkedin.com/in/jd-buendia-66ab7483/"
+        const github = "https://github.com/jonathan-dwight"
+
         return (
             <>
                 <div className="nav-bar">
@@ -27,6 +30,12 @@ class NavBar extends React.Component {
                         </Link>
                         <a href={unTappd} target="_blank">
                             <p className="flavor-town">Untappd-Site</p>
+                        </a>
+                        <a href={linkedIn} target="_blank">
+                            <p className="flavor-town">LinkedIn</p>
+                        </a>
+                        <a href={github} target="_blank">
+                            <p className="flavor-town">Github</p>
                         </a>
                     </div>
                     <div className="right-header">

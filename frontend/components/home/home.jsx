@@ -22,6 +22,13 @@ class Home extends React.Component {
                 burger={el} restaurants={this.props.restaurants} users={this.props.users} />
         })
 
+        let numPosts = 0;
+        for (let i = 0; i < this.props.burgers.length; i++) {
+            if (this.props.burgers[i].authorId === this.props.currentUser.id) {
+                numPosts += 1
+            }
+        }
+
         return (
             <div className="home-container">
                 <div className="home-content">
@@ -42,18 +49,18 @@ class Home extends React.Component {
                                 <p>{this.props.currentUser.username}</p>
                             </div>
                         </div>
-                            <div className="box-of-badges">
-                                <div className="inner-box">
-                                    <p>N</p>
-                                    <p>total</p>
-                                </div>
+                        <div className="box-of-badges">
                             <div className="inner-box">
-                                <p>N</p>
-                                <p>friends</p>
+                                <p className="number-text">{numPosts}</p>
+                                <p className="small-text">FlavorChecks</p>
+                            </div>
+                            <div className="inner-box">
+                                <p className="number-text">0</p>
+                                <p className="small-text">Following</p>
                             </div>
                         </div>
                     </div>
-                 </ul>
+                </ul>
             </div>
         )
     }
