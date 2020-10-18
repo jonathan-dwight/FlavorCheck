@@ -22,7 +22,10 @@ const FlavorTownIndexItem = (props) => {
         nonCheckArr.push(<span key={i} className="fa fa-star"></span>)
     }
 
+    let image;
 
+    (props.burger.photo) ? image = <img className="burger-image" src={props.burger.photo} /> 
+    : image = null;
 
     return (
         <div className="global-review"> 
@@ -54,7 +57,7 @@ const FlavorTownIndexItem = (props) => {
 
                 </div>
                 {/* this would be burger post image*/}
-                <img className="burger-image" src={window.mcdouble}/>
+                {image}
                 <p className="date">{year} {month} {day}</p>
             </div>
         </div>

@@ -1,4 +1,4 @@
-class Api::BurgersController < ApplicationController
+ class Api::BurgersController < ApplicationController
 
     def show 
         @burger = Burger.find_by(id: params[:id])
@@ -50,7 +50,7 @@ class Api::BurgersController < ApplicationController
     private
 
     def burger_params 
-        params.require(:burger).permit(:name, :rating, :description, :restaurant_id, :author_id)
+        params.require(:burger).permit(:name, :rating, :description, :restaurant_id, :author_id, :photo)
     end
 
 

@@ -3,6 +3,7 @@ import BurgerForm from "./burgerform"
 import { createBurger } from "../../actions/burger_actions";
 import { closeModal } from '../../actions/modal_actions';
 import { fetchUser } from '../../actions/user_actions'
+import { withRouter } from "react-router-dom"
 
 const mapStateToProps = (state, ownProps) => {
     let errors = state.errors.burgers
@@ -26,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
     })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BurgerForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BurgerForm))

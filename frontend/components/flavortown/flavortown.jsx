@@ -13,6 +13,7 @@ class FlavorTown extends React.Component {
     }
 
     render() {
+
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>

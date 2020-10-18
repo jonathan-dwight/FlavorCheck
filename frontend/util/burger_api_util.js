@@ -16,7 +16,9 @@ export const createBurger = (burger) => {
     return $.ajax({
         url: '/api/burgers',
         method: 'POST',
-        data: { burger }
+        data: burger,
+        contentType: false,
+        processData: false
     })
 }
 

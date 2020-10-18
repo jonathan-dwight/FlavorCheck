@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 class BurgerForm extends React.Component {
     constructor(props) {
@@ -8,11 +9,13 @@ class BurgerForm extends React.Component {
             description: "",
             rating: 3,
             restaurant_id: "",
-            author_id: this.props.sessionId
+            author_id: this.props.sessionId,
+            imageFile: null
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
+        this.handlePhotoInput = this.handlePhotoInput.bind(this)
     }
 
     componentDidMount() {
@@ -36,12 +39,35 @@ class BurgerForm extends React.Component {
         }
         this.setState ({ restaurant_id: restaurantId })
     }
+
+    handlePhotoInput(e) {
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () =>
+            this.setState({ imageUrl: reader.result, imageFile: file });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
+        debugger
+    }
     
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(() => {
+        const formData = new FormData();
+        formData.append('burger[name]', this.state.name);
+        formData.append('burger[description]', this.state.description);
+        formData.append('burger[rating]', this.state.rating);
+        formData.append('burger[restaurant_id]', this.state.restaurant_id);
+        formData.append('burger[author_id]', this.state.author_id);
+        if (this.state.imageFile) {
+            formData.append('burger[photo]', this.state.imageFile);
+        }
+        this.props.processForm(formData).then(() => {
             this.props.closeModal()
-        })
+        }).fail((resp) => console.log(resp));
     }
 
     render() {
@@ -62,10 +88,26 @@ class BurgerForm extends React.Component {
                         <textarea cols="30" rows="10" placeholder="What do you think?" 
                         className="text-description" onChange={this.handleInput("description")}></textarea>
 
-                        <div
-                        className="add-picture">Add Photo</div>
+                        <div className="picture-box">
+                            <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
+                            <label htmlFor="file">
+                                <img src={window.checkin} className="add-picture" htmlFor="file"/>
+                            </label>
+                        </div>
 
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                         {/* <input type="range" min="1" max="5 " value="3" className="slider"></input> */}
+
+                        {/* <input type="radio" id="radio1" checked="checked"/>
+                        <label class="container" for="radio1">
+                            <link rel="stylesheet" for="radio1" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                        </label> */}
+
+                        {/* <div class="slidecontainer">
+                            <input type="range" min="1" max="5" value="1" class="slider" id="myRange" step="1"/>
+                        </div> */}
+
+
                         <div className="restaurant-form">
                             <p>Burger Joints:</p>
                             <select className="restaurants" onChange={this.handleRestaurantChange}>

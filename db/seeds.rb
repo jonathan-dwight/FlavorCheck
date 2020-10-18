@@ -36,8 +36,13 @@ restaurant10 = Restaurant.create(name: "Cassell's")
 restaurant11 = Restaurant.create(name: "Plan Check")
 
 burger1 = Burger.create(name: "McDouble", rating: 3, description: "It was really good with Mac sauce!!", restaurant_id: restaurant1.id, author_id: user2.id)
+
 burger2 = Burger.create(name: "Double Double", rating: 4, description: "First time having it! It was AMAZING!!", restaurant_id: restaurant2.id, author_id: user3.id)
+
 burger3 = Burger.create(name: "ShackBurger", rating: 2, description: "It was okay.... Not worth the price...", restaurant_id: restaurant3.id, author_id: user4.id)
+file3 = open('https://flavorcheck-seed.s3-us-west-1.amazonaws.com/shakeburger.jpg')
+burger3.photo.attach(io: file3, filename: "img_#{burger3.id}.jpg")
+
 burger4 = Burger.create(name: "Hula Burger", rating: 4, description: "This is hands down best burger at Island's", restaurant_id: restaurant4.id, author_id: user5.id)
 burger5 = Burger.create(name: "Chili Cheese Burger", rating: 5, description: "Tommy's burgers are the secret in LA", restaurant_id: restaurant5.id, author_id: user6.id)
 burger6 = Burger.create(name: "Double Charburger", rating: 3, description: "Always my go to burger", restaurant_id: restaurant6.id, author_id: user7.id)
