@@ -9,6 +9,9 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchBurgers();
+        setTimeout(() => {
+            this.props.fetchUsers()
+        }, 200);
     }
 
     render() {
@@ -24,10 +27,16 @@ class Home extends React.Component {
 
         let numPosts = 0;
         for (let i = 0; i < this.props.burgers.length; i++) {
-            if (this.props.burgers[i].authorId === this.props.currentUser.id) {
+            if (this.props.burgers[i].authorId === this.props.sessionId) {
                 numPosts += 1
             }
         }
+
+        let currentName;
+        (this.props.currentUser) ? currentName = this.props.currentUser.name : currentName = null;
+        
+        let currentUserName;
+        (this.props.currentUser) ? currentUserName = this.props.currentUser.username : currentUserName = null;
 
         return (
             <div className="home-container">
@@ -45,8 +54,8 @@ class Home extends React.Component {
                         <div className="profile-username">
                             <img src={window.avatar} className="avatar-review"/>
                             <div className="box-username">
-                                <h2>{this.props.currentUser.name}</h2>
-                                <p>{this.props.currentUser.username}</p>
+                                <h2>{currentName}</h2>
+                                <p>{currentUserName}</p>
                             </div>
                         </div>
                         <div className="box-of-badges">

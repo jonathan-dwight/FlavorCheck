@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         openModal: (modal) => (dispatch(openModal(modal))),
         fetchBurgers: () => (dispatch(fetchBurgers())),
-        fetchRestaurants: () => (dispatch(fetchRestaurants()))
+        fetchRestaurants: () => (dispatch(fetchRestaurants())),
+        imageHash: Date.now()
     })
 
 }

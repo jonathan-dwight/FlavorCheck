@@ -20,7 +20,8 @@ class FlavorTown extends React.Component {
         );
         const burgers = this.props.burgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
-                burger={el}  restaurants={this.props.restaurants} users={this.props.users}/>
+                burger={el}  restaurants={this.props.restaurants} users={this.props.users}
+                date={this.props.imageHash}/>
             })
 
         const restaurantList = this.props.restaurantList.map((el) => {

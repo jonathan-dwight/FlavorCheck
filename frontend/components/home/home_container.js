@@ -1,18 +1,19 @@
 import { connect } from "react-redux";
 import Home from "./home";
 import { fetchBurgers } from "../../actions/burger_actions"
+import { fetchUsers } from "../../actions/user_actions"
 import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
 
     let sessionId = state.session.id;
-
     return ({
         burgers: Object.values(state.entities.burgers),
         currentUser: state.entities.users[sessionId],
         restaurants: state.entities.restaurants,
         users: state.entities.users,
+        sessionId: sessionId
     })
 }
 
@@ -22,7 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         openModal: (modal) => (dispatch(openModal(modal))),
         fetchBurgers: () => (dispatch(fetchBurgers())),
-        fetchRestaurants: () => (dispatch(fetchRestaurants()))
+        fetchRestaurants: () => (dispatch(fetchRestaurants())),
+        fetchUsers: () => (dispatch(fetchUsers()))
     })
 
 }

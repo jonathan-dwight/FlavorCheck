@@ -24,7 +24,7 @@ const FlavorTownIndexItem = (props) => {
 
     let image;
 
-    (props.burger.photo) ? image = <img className="burger-image" src={props.burger.photo} /> 
+    (props.burger.photo) ? image = <img className="burger-image" src={`${props.burger.photo}?${props.date}`}/> 
     : image = null;
 
     return (

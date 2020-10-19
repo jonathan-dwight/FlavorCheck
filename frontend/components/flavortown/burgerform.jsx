@@ -10,7 +10,8 @@ class BurgerForm extends React.Component {
             rating: 3,
             restaurant_id: "",
             author_id: this.props.sessionId,
-            imageFile: null
+            imageFile: null,
+            imageUrl: null
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -72,14 +73,17 @@ class BurgerForm extends React.Component {
 
     render() {
  
-        let restaurants = []
+        const restaurants = []
         const restaurantMap = this.props.restaurants.map((el) => {
             restaurants.push(<option key={el.id} value={el.name}>{el.name}</option>)
         })
 
-        let errors = this.props.errors.map((el, idx) => {
+        const errors = this.props.errors.map((el, idx) => {
             return <div className="burger-errors" key={idx}>{el}</div>
         })
+        
+        const preview = this.state.imageUrl ? <img src={this.state.imageUrl} className="preview"/> : null
+
         return(
             <div className="burger-form-box">
                 <div className="inner-burger-form-box">
@@ -98,6 +102,8 @@ class BurgerForm extends React.Component {
                             <label htmlFor="file">
                                 <img src={window.checkin} className="add-picture" htmlFor="file"/>
                             </label>
+                            {preview} 
+                            {/* need to fix sizing */}
                         </div>
 
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
