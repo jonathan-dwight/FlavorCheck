@@ -14,8 +14,8 @@ export default (state = {}, action) => {
             nextState = action.payload.users
             return nextState;
         case RECEIVE_BURGERS:
-            nextState = action.payload.users
-            return nextState     
+            return Object.assign(action.payload.users, nextState)
+            // return nextState     
         default:
             return state;
     }

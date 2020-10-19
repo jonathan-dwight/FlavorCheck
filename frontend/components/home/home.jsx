@@ -9,9 +9,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchBurgers();
-        setTimeout(() => {
-            this.props.fetchUsers()
-        }, 200);
         window.scrollTo(0, 0);
     }
 
