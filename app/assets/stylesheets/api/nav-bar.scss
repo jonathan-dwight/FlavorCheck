@@ -1,6 +1,6 @@
 .nav-bar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     position: fixed;
     width: 100%;
     margin: 0 auto;
@@ -14,8 +14,7 @@
     display: flex;
     width: 50%;
     justify-content: flex-start;
-    padding-right: 75px;
-    padding-left: 30px;
+    margin-right: 200px;
 }
 
 .flavor-check {
@@ -40,8 +39,6 @@
     white-space: normal;
     margin-top: 16px;
     padding-left: 35px;
-    // width: 100%;
-
 }
 
 .flavor-town:hover {
@@ -60,7 +57,7 @@
 
 .right-header {
     display: flex;
-    margin-right: 30px;
+    margin-left: 25px;
 }
 
 .logout {

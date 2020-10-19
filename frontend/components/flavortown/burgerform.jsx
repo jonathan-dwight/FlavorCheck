@@ -66,10 +66,7 @@ class BurgerForm extends React.Component {
             formData.append('burger[photo]', this.state.imageFile);
         }
         this.props.processForm(formData).then(() => {
-            setTimeout(() => {
-                this.props.closeModal()
-            }, 1000)
-    
+            this.props.closeModal()
         })
     }
 

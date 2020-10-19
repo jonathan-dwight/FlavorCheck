@@ -1,6 +1,6 @@
 .global-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background-color: #f5f2e8;
     flex-direction: rows;
     overflow: auto;
@@ -25,7 +25,8 @@
     position: relative;
     padding: 16px;
     margin-bottom: 30px;
-    margin-left: 140px;
+    // margin-left: 140px;
+    margin-right: 20px;
  
 }
 
@@ -40,7 +41,8 @@
     position: -webkit-sticky;
     width: 300px;
     height: max-content;
-    margin-right: 140px;
+    // margin-right: 140px;
+    margin-left: 10px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -158,6 +160,7 @@
     width: 90%;
     margin-top: 5px;
     height: 315px;
+    object-fit: cover;
 }
 
 
