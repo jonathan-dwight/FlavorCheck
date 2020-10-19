@@ -26,8 +26,11 @@ const FlavorTownIndexItem = (props) => {
     (props.burger.photo) ? image = <img className="burger-image" src={`${props.burger.photo}?${props.date}`}/> 
     : image = null;
 
+    let currentUser;
+    (props.currentUser) ? currentUser = props.currentUser.id : currentUser = null;
+
     let deleteButton;
-    (props.burger.authorId === props.currentUser.id) ? (
+    (props.burger.authorId === currentUser) ? (
         deleteButton = <p onClick={() => props.deleteBurger(props.burger.id)} className="delete">Delete FlavorCheck</p>
     ) : (
         deleteButton = null
