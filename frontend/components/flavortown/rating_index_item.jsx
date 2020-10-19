@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const Rating = (props) => {
+// const Rating = (props) => {
 
-}
+// }
 
-export default Rating
+// export default Rating

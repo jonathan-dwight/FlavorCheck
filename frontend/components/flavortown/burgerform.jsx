@@ -1,4 +1,5 @@
 import React from "react";
+import StarRating from "./star-rating"
 
 
 class BurgerForm extends React.Component {
@@ -17,7 +18,8 @@ class BurgerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
         this.handlePhotoInput = this.handlePhotoInput.bind(this)
-        this.handleRatingInput = this.handleRatingInput.bind(this)
+        this.setRating = this.setRating.bind(this)
+        // this.handleRatingInput = this.handleRatingInput.bind(this)
     }
 
     componentDidMount() {
@@ -55,6 +57,11 @@ class BurgerForm extends React.Component {
         }
     }
 
+    setRating(rating) {
+        let num = parseInt(rating)
+        this.setState({ rating: num });
+
+    };
     // handleHoverInput(e) {
     //     e.target.style.color = 'orange'
     // }
@@ -83,7 +90,6 @@ class BurgerForm extends React.Component {
     }
 
     render() {
-        debugger
         const restaurants = []
         const restaurantMap = this.props.restaurants.map((el) => {
             restaurants.push(<option key={el.id} value={el.name}>{el.name}</option>)
@@ -108,6 +114,15 @@ class BurgerForm extends React.Component {
                         <textarea cols="30" rows="10" placeholder="What do you think?" 
                         className="text-description" onChange={this.handleInput("description")}></textarea>
 
+                        <div className="form-input rating">
+                            <label htmlFor="rating">Rating:</label>
+                            <StarRating
+                                numberOfStars="5"
+                                currentRating="0"
+                                onClick={this.setRating}
+                            />
+                        </div>
+
                         <div className="picture-box">
                             <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
                             <label htmlFor="file">
@@ -117,7 +132,7 @@ class BurgerForm extends React.Component {
                             {/* need to fix sizing */}
                         </div>
 
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                        {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
                         
                         
                         
