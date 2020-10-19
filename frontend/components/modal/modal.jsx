@@ -37,7 +37,6 @@ const Modal = ({ modal, closeModal }) => {
 }
 
 const mapStateToProps = state => {
-    debugger
     if (!state.ui.modal) {
         return {
             modal: null

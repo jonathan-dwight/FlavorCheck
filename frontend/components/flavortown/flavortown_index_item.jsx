@@ -30,19 +30,12 @@ const FlavorTownIndexItem = (props) => {
     (props.currentUser) ? currentUser = props.currentUser.id : currentUser = null;
 
     let deleteButton;
-    // (props.burger.authorId === currentUser) ? (
-    //     deleteButton = <p onClick={() => props.deleteBurger(props.burger.id)} className="delete">Delete FlavorCheck</p>
-    // ) : (
-    //     deleteButton = null
-    // )
-
     (props.burger.authorId === currentUser) ? (
         deleteButton = <p onClick={() => props.openModal('delete', props.burger.id)} className="delete">Delete FlavorCheck</p>
     ) : (
         deleteButton = null
     )
 
-    //CAN CREATE A MODEL TO MAKE SURE IF THEY WANT TO DELETE POST
     return (
         <div className="global-review"> 
             <div className="review-title">

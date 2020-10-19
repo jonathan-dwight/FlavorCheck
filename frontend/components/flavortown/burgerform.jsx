@@ -7,7 +7,7 @@ class BurgerForm extends React.Component {
         this.state = {
             name: "",
             description: "",
-            rating: 3,
+            rating: 0,
             restaurant_id: "",
             author_id: this.props.sessionId,
             imageFile: null,
@@ -17,6 +17,7 @@ class BurgerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
         this.handlePhotoInput = this.handlePhotoInput.bind(this)
+        this.handleRatingInput = this.handleRatingInput.bind(this)
     }
 
     componentDidMount() {
@@ -53,7 +54,18 @@ class BurgerForm extends React.Component {
             this.setState({ imageUrl: "", imageFile: null });
         }
     }
-    
+
+    // handleHoverInput(e) {
+    //     e.target.style.color = 'orange'
+    // }
+
+    // handleRatingInput(field, value) {
+    //     return (e) => this.setState({ [field]: value })
+    //     //how to have it change input
+    //     //counter of stars?
+    // }   
+
+
     handleSubmit(e) {
         e.preventDefault()
         const formData = new FormData();
@@ -71,11 +83,11 @@ class BurgerForm extends React.Component {
     }
 
     render() {
- 
+        debugger
         const restaurants = []
         const restaurantMap = this.props.restaurants.map((el) => {
             restaurants.push(<option key={el.id} value={el.name}>{el.name}</option>)
-        })
+        })//NEED TO FIGURE OUT HOW TO GET THE RESTAURANT TO BE AUTOPOPULATED IN FORM WHEN IN SHOW PAGE
 
         const errors = this.props.errors.map((el, idx) => {
             return <div className="burger-errors" key={idx}>{el}</div>
@@ -106,16 +118,19 @@ class BurgerForm extends React.Component {
                         </div>
 
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-                        {/* <input type="range" min="1" max="5 " value="3" className="slider"></input> */}
-
-                        {/* <input type="radio" id="radio1" checked="checked"/>
-                        <label class="container" for="radio1">
-                            <link rel="stylesheet" for="radio1" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-                        </label> */}
-
-                        {/* <div class="slidecontainer">
-                            <input type="range" min="1" max="5" value="1" class="slider" id="myRange" step="1"/>
-                        </div> */}
+                        
+                        
+                        
+                        
+                        {/* <span className={this.handleHoverInput ? "fa fa-star" : "fa fa-star checked" } 
+                        onMouseOver={this.handleHoverInput} 
+                        onClick={this.handleRatingInput('rating', 1)}></span>
+                        
+                        
+                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 2)}></span>
+                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 3)}></span>
+                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 4)}></span>
+                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 5)}></span> */}
 
 
                         <div className="restaurant-form">
