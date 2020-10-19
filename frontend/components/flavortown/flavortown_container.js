@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import FlavorTown from "./flavortown";
 import { fetchRestaurants } from "../../actions/restaurant_actions"
-import { fetchBurgers } from "../../actions/burger_actions"
+import { fetchBurgers, deleteBurger } from "../../actions/burger_actions"
 import { openModal } from '../../actions/modal_actions';
 
 
@@ -23,6 +23,7 @@ const mapDispatchToProps = (dispatch) => {
         openModal: (modal) => (dispatch(openModal(modal))),
         fetchBurgers: () => (dispatch(fetchBurgers())),
         fetchRestaurants: () => (dispatch(fetchRestaurants())),
+        deleteBurger: (burgerId) => (dispatch(deleteBurger(burgerId))),
         imageHash: Date.now()
     })
 

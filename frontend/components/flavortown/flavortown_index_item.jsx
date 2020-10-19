@@ -23,10 +23,16 @@ const FlavorTownIndexItem = (props) => {
     }
 
     let image;
-
     (props.burger.photo) ? image = <img className="burger-image" src={`${props.burger.photo}?${props.date}`}/> 
     : image = null;
 
+    let deleteButton;
+    (props.burger.authorId === props.currentUser.id) ? (
+        deleteButton = <p onClick={() => props.deleteBurger(props.burger.id)} className="delete">Delete FlavorCheck</p>
+    ) : (
+        deleteButton = null
+    )
+    //CAN CREATE A MODEL TO MAKE SURE IF THEY WANT TO DELETE POST
     return (
         <div className="global-review"> 
             <div className="review-title">
@@ -58,7 +64,10 @@ const FlavorTownIndexItem = (props) => {
                 </div>
                 {/* this would be burger post image*/}
                 {image}
-                <p className="date">{year} {month} {day}</p>
+                <div className="bottom-review">
+                    <p className="date">{year} {month} {day}</p>
+                    {deleteButton}
+                </div>
             </div>
         </div>
     )

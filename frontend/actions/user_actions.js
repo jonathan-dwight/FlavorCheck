@@ -15,7 +15,6 @@ export const fetchUser = (userId) => (dispatch) => {
 }
 
 export const fetchUsers = () => (dispatch) => {
-    debugger
     return UserAPIUtil.fetchUsers().then((resp) => {
         dispatch(receiveAllUsers(resp))
     })

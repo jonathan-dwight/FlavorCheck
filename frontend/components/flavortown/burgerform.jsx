@@ -66,7 +66,9 @@ class BurgerForm extends React.Component {
             formData.append('burger[photo]', this.state.imageFile);
         }
         this.props.processForm(formData).then(() => {
-            this.props.closeModal()
+            setTimeout(() => {
+                this.props.closeModal()
+            }, 1000)
     
         })
     }
@@ -81,7 +83,7 @@ class BurgerForm extends React.Component {
         const errors = this.props.errors.map((el, idx) => {
             return <div className="burger-errors" key={idx}>{el}</div>
         })
-        
+
         const preview = this.state.imageUrl ? <img src={this.state.imageUrl} className="preview"/> : null
 
         return(
