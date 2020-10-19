@@ -12,6 +12,7 @@ class Home extends React.Component {
         setTimeout(() => {
             this.props.fetchUsers()
         }, 200);
+        window.scrollTo(0, 0);
     }
 
     render() {

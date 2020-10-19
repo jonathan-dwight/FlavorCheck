@@ -8,6 +8,9 @@ import HomeContainer from "./home/home_container"
 import { AuthRoute, ProtectedRoute } from ".././util/route_util"
 import { Switch, Redirect } from "react-router-dom";
 
+//testing dummy
+import Restaurant from "./restaurant/restaurant"
+
 const App = () => {
     return (
         <div>
@@ -15,11 +18,13 @@ const App = () => {
             <header>
                 <ProtectedRoute exact path="/home" component={NavBarContainer} />
                 <ProtectedRoute exact path="/flavortown" component={NavBarContainer} />
+                <ProtectedRoute exact path="/restaurant/:restaurantId" component={NavBarContainer} />
             </header>
 
             <Switch>
                 <ProtectedRoute exact path="/home" component={HomeContainer} />
                 <ProtectedRoute exact path="/flavortown" component={FlavorTownContainer} />
+                <ProtectedRoute exact path="/restaurant/:restaurantId" component={Restaurant} />
                 <AuthRoute exact path="/" component={SplashContainer} />
                 <Redirect to="/"></Redirect>
             </Switch>

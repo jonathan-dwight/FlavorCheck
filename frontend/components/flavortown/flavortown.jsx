@@ -10,6 +10,7 @@ class FlavorTown extends React.Component {
 
     componentDidMount() {
         this.props.fetchBurgers();
+        window.scrollTo(0, 0);
     }
 
     render() {
