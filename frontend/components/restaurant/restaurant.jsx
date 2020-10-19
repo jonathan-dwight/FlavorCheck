@@ -5,9 +5,13 @@
 import React from "react"
 
 class Restaurant extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchRestaurant(this.props.match.params.restaurantId)
+    }
     render() {
         return (
-            <div>RESTAURANT PAGE</div>
+            <div className="restaurant-show-container">RESTAURANT PAGE</div>
         )
     }
 }
