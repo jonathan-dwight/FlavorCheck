@@ -5,43 +5,47 @@ class StarRating extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentRating: this.props.currentRating
+            currentRating: this.props.currentRating,
+            hoverRating: 0,
         };
         this.setRating = this.setRating.bind(this)
         this.starClickHandler = this.starClickHandler.bind(this)
         this.hoverHandler = this.hoverHandler.bind(this)
     }
 
-    // componentDidMount() {
-    //     this.setRating();
-    // }
-
     hoverHandler(e) {
         const stars = e.target.parentElement.getElementsByClassName('star');
         const hoverValue = e.target.dataset.value;
-        let that = this.state
+    
         Array.from(stars).forEach( (star) => {
             star.style.color = hoverValue
-                 >= star.dataset.value ? 'orange': 'gray'
+                 >= star.dataset.value ? 'yellow': 'gray'
         });
+        this.props.passRating("0")
     }
 
     setRating(e) {
-        let rating = e.target.dataset.value; 
-        this.setState( {currentRating: rating} ) //set state so it stays highlighted
+        let rating = this.state.currentRating; 
+        const stars = e.target.parentElement.getElementsByClassName('star');
+        this.setState( {currentRating: rating} ) 
+        Array.from(stars).forEach((star) => {
+            star.style.color = rating
+                >= star.dataset.value ? 'orange' : 'gray'
+        });
+        this.props.passRating(rating)
         
-        if (this.props.onClick) {
-            this.props.onClick(rating);
-        }
     }
 
     starClickHandler(e) {
-        debugger
+        const stars = e.target.parentElement.getElementsByClassName('star');
+        const clickValue = e.target.dataset.value;
+        Array.from(stars).forEach((star) => {
+            star.style.color = clickValue
+                >= star.dataset.value ? 'orange' : 'gray'
+        });
         const rating = e.target.dataset.value; 
         this.setState({ currentRating: rating} )
-        if (this.props.onClick) {
-            this.props.onClick(rating);
-        }
+        this.props.passRating(rating)
     }
 
     render() {
@@ -49,7 +53,6 @@ class StarRating extends React.Component {
             <div className="rating"
                 ref="rating"
                 data-rating={this.state.currentRating}
-                onMouseOut={this.setRating}
             >
                 {[...Array(+this.props.numberOfStars).keys()].map((n) => {
                     return (
@@ -59,6 +62,7 @@ class StarRating extends React.Component {
                             data-value={n+1}
                             onMouseOver={this.hoverHandler}
                             onClick={this.starClickHandler}
+                            onMouseOut={this.setRating}
                         >
                         &#9733;
                         </span>

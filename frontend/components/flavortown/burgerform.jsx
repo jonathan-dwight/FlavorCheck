@@ -99,64 +99,71 @@ class BurgerForm extends React.Component {
             return <div className="burger-errors" key={idx}>{el}</div>
         })
 
-        const preview = this.state.imageUrl ? <img src={this.state.imageUrl} className="preview"/> : null
+        const preview = this.state.imageUrl ? (<img src={this.state.imageUrl} className="add-picture"/> 
+        ) : (<img src={window.checkin} className="add-picture" htmlFor="file" />) 
 
         return(
             <div className="burger-form-box">
                 <div className="inner-burger-form-box">
                     <form onSubmit={this.handleSubmit}>
-                        <h4 className="burger-form-header">Share Your Flavor!</h4>
-
-                        <input type="text" className="burger-name" 
-                        placeholder="What burger are you enjoying?" 
-                        onChange={this.handleInput("name")}/>
-
-                        <textarea cols="30" rows="10" placeholder="What do you think?" 
-                        className="text-description" onChange={this.handleInput("description")}></textarea>
-
-                        <div className="form-input rating">
-                            <label htmlFor="rating">Rating:</label>
-                            <StarRating
-                                numberOfStars="5"
-                                currentRating="0"
-                                onClick={this.setRating}
-                            />
+                        <div className="burger-form-header">
+                            <h4 className="burger-form-header-text">Share Your Flavor!</h4>
+                            <div onClick={this.props.closeModal} className="close-x-burger">X</div>
                         </div>
+                        <div className="form-content">
+                            <div className="burger-text-picture">
+                                <div className="burger-text">
+                                    <input type="text" className="burger-name" 
+                                    placeholder="What burger are you FlavorChecking?" 
+                                    onChange={this.handleInput("name")}/>
 
-                        <div className="picture-box">
-                            <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
-                            <label htmlFor="file">
-                                <img src={window.checkin} className="add-picture" htmlFor="file"/>
-                            </label>
-                            {preview} 
-                            {/* need to fix sizing */}
+                                    <textarea cols="50" rows="5" placeholder="What do you think?" 
+                                    className="text-description" onChange={this.handleInput("description")}></textarea>
+                                </div>
+                                <div className="picture-box">
+                                    <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
+                                    <label htmlFor="file">
+                                        {preview} 
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div className="form-input rating">
+                                <label htmlFor="rating">Rating:</label>
+                                <StarRating
+                                    numberOfStars="5"
+                                    currentRating="0"
+                                    passRating={this.setRating}
+                                />
+                            </div>
+
+
+                            {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
+                            
+                            
+                            
+                            
+                            {/* <span className={this.handleHoverInput ? "fa fa-star" : "fa fa-star checked" } 
+                            onMouseOver={this.handleHoverInput} 
+                            onClick={this.handleRatingInput('rating', 1)}></span>
+                            
+                            
+                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 2)}></span>
+                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 3)}></span>
+                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 4)}></span>
+                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 5)}></span> */}
+
+
+                            <div className="restaurant-form">
+                                <p>Burger Joints:</p>
+                                <select className="restaurants" onChange={this.handleRestaurantChange}>
+                                    <option value="default">--select one--</option>
+                                    {restaurants.map((el) => el)}
+                                </select>
+                            </div>
+                            <input type="submit" name="" id=""/>
+                            {errors}
                         </div>
-
-                        {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
-                        
-                        
-                        
-                        
-                        {/* <span className={this.handleHoverInput ? "fa fa-star" : "fa fa-star checked" } 
-                        onMouseOver={this.handleHoverInput} 
-                        onClick={this.handleRatingInput('rating', 1)}></span>
-                        
-                        
-                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 2)}></span>
-                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 3)}></span>
-                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 4)}></span>
-                        <span className="fa fa-star" onClick={this.handleRatingInput('rating', 5)}></span> */}
-
-
-                        <div className="restaurant-form">
-                            <p>Burger Joints:</p>
-                            <select className="restaurants" onChange={this.handleRestaurantChange}>
-                                <option value="default">--select one--</option>
-                                {restaurants.map((el) => el)}
-                            </select>
-                        </div>
-                        <input type="submit" name="" id=""/>
-                        {errors}
                     </form>
                 </div>
             </div>
