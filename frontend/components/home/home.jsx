@@ -24,7 +24,8 @@ class Home extends React.Component {
             return <FlavortownIndexItem key={el.id}
                 burger={el} restaurants={this.props.restaurants} users={this.props.users}
                 currentUser={this.props.currentUser}
-                deleteBurger={this.props.deleteBurger} />
+                deleteBurger={this.props.deleteBurger} 
+                openModal={this.props.openModal}/>
         })
 
         let numPosts = 0;

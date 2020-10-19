@@ -18,11 +18,13 @@ class FlavorTown extends React.Component {
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
         );
+
         const burgers = this.props.burgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
                 burger={el}  restaurants={this.props.restaurants} users={this.props.users}
-                date={this.props.imageHash} currentUser={this.props.currentUser}
-                deleteBurger={this.props.deleteBurger}/>
+                currentUser={this.props.currentUser}
+                deleteBurger={this.props.deleteBurger}
+                openModal={this.props.openModal}/>
             })
 
         const restaurantList = this.props.restaurantList.map((el) => {
@@ -46,7 +48,6 @@ class FlavorTown extends React.Component {
                 </ul>
             </div>
 
-            //NEED TO FIGURE OUT WHY THE IMAGE DOESNT RENDER
         )
     }
 }

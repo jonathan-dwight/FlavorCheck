@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import BurgerFormContainer from '../flavortown/burgerform_container'
+import DeleteFormContainer from "../flavortown/delete_container"
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {
@@ -20,6 +21,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'burger':
             component = <BurgerFormContainer />;
             break;
+        case 'delete':
+            component = <DeleteFormContainer id={modal.id}/>;
+            break
         default:
             return null;
     }
@@ -33,9 +37,18 @@ const Modal = ({ modal, closeModal }) => {
 }
 
 const mapStateToProps = state => {
-    return {
-        modal: state.ui.modal
-    };
+    debugger
+    if (!state.ui.modal) {
+        return {
+            modal: null
+        }
+    } else {
+        return {
+            modal: state.ui.modal.modal,
+            id: state.ui.modal.id
+        };
+
+    }
 };
 
 const mapDispatchToProps = dispatch => {

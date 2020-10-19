@@ -20,11 +20,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
-        openModal: (modal) => (dispatch(openModal(modal))),
+        openModal: (modal, id) => (dispatch(openModal(modal, id))),
         fetchBurgers: () => (dispatch(fetchBurgers())),
         fetchRestaurants: () => (dispatch(fetchRestaurants())),
-        deleteBurger: (burgerId) => (dispatch(deleteBurger(burgerId))),
-        imageHash: Date.now()
+        deleteBurger: (burgerId) => (dispatch(deleteBurger(burgerId)))
     })
 
 }
