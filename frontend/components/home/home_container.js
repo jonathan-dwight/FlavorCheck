@@ -6,14 +6,14 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-
     let sessionId = state.session.id;
     return ({
         burgers: Object.values(state.entities.burgers),
         currentUser: state.entities.users[sessionId],
         restaurants: state.entities.restaurants,
         users: state.entities.users,
-        sessionId: sessionId
+        sessionId: sessionId,
+        followers: Object.values(state.entities.followers)
     })
 }
 

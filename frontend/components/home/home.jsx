@@ -8,9 +8,17 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
+        // this.state.hasFetched = true
         this.props.fetchBurgers();
+        // if (this.state.hasFetched) 
+        // }
+        //why does this do this??? -- can't log out because it resets...
         window.scrollTo(0, 0);
     }
+
+    // componentWillUnmount() {
+    //     this.state.hasFetched = false
+    // }
 
     render() {
         const burgerForm = (
@@ -21,7 +29,19 @@ class Home extends React.Component {
         // const followersBurgers = [];
         // this.props.burgers.map((el) => {
         //     if (el.authorId === thi)
-        // })
+       // })
+
+    //    let followee = [];
+    //    this.props.followers.map((el) => {
+    //        if (el.follower_id === currentUser.id) {
+    //            followee.push(el.id)
+    //        }
+    //    })
+
+    //    const followerBurgers = [];
+    //    this.props.burgers.map((el) => {
+    //        if (el.authorId === )
+    //    })
 
         const burgers = this.props.burgers.map((el) => {
             return <FlavortownIndexItem key={el.id}

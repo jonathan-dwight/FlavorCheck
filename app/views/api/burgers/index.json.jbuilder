@@ -26,10 +26,3 @@ json.restaurants do
         end
     end
 end
-
-# json.followers do 
-#     @burgers.each do |burger| 
-#         debugger
-#         json.extract! burger.author.followers, :followee_id, :follower_id
-#     end
-# end
