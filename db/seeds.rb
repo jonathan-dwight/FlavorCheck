@@ -9,6 +9,7 @@
 User.destroy_all
 Restaurant.destroy_all
 Burger.destroy_all
+Follower.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('restaurants')
@@ -22,6 +23,11 @@ user4 = User.create(username: "jackpack", name: "Jacky Li", password: "password"
 user5 = User.create(username: "petey", name: "Peter Min", password: "password", email: "peter@aa.io")
 user6 = User.create(username: "cheetahluva", name: "Chris Lee", password: "password", email: "chris@aa.io")
 user7 = User.create(username: "raveboi", name: "Jon Siu", password: "password", email: "jon@aa.io")
+
+follow1 = Follower.create(followee_id: 3, follower_id: 2)
+follow2 = Follower.create(followee_id: 4, follower_id: 2)
+follow3 = Follower.create(followee_id: 5, follower_id: 4)
+follow4 = Follower.create(followee_id: 7, follower_id: 4)
 
 restaurant1 = Restaurant.create(name: "McDonald's")
 restaurant2 = Restaurant.create(name: "In-N-Out")

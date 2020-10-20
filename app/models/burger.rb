@@ -6,7 +6,6 @@
 #  name          :string           not null
 #  rating        :integer          not null
 #  description   :text
-#  picture       :string
 #  restaurant_id :integer          not null
 #  author_id     :integer          not null
 #  created_at    :datetime         not null

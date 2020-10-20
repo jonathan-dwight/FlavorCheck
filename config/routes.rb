@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :index]
     resources :burgers
     resources :restaurants, only: [:show, :index]
+    resources :followers, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
   end
 

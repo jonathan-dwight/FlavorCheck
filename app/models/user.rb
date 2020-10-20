@@ -25,6 +25,16 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Burger
 
+    has_many :followees,
+        primary_key: :id,
+        foreign_key: :followee_id,
+        class_name: :Follower
+
+    has_many :followers,
+        primary_key: :id,
+        foreign_key: :follower_id,
+        class_name: :Follower
+
     def self.generate_session_token
         SecureRandom::urlsafe_base64
     end
