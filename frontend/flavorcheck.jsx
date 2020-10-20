@@ -4,6 +4,7 @@ import Root from "./components/root"
 import configureStore from "./store/store"
 import * as BurgerActions from "./actions/burger_actions"
 import * as RestaurantActions from "./actions/restaurant_actions"
+import * as FollowerActions from "./util/follower_api_util"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,4 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.BurgerActions = BurgerActions;
     window.RestaurantActions = RestaurantActions;
+    window.FollowerActions = FollowerActions;
 })

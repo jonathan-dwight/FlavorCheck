@@ -8,40 +8,17 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        // this.state.hasFetched = true
         this.props.fetchBurgers();
-        // if (this.state.hasFetched) 
-        // }
-        //why does this do this??? -- can't log out because it resets...
         window.scrollTo(0, 0);
     }
 
-    // componentWillUnmount() {
-    //     this.state.hasFetched = false
-    // }
+  
 
     render() {
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
         );
-
-        // const followersBurgers = [];
-        // this.props.burgers.map((el) => {
-        //     if (el.authorId === thi)
-       // })
-
-    //    let followee = [];
-    //    this.props.followers.map((el) => {
-    //        if (el.follower_id === currentUser.id) {
-    //            followee.push(el.id)
-    //        }
-    //    })
-
-    //    const followerBurgers = [];
-    //    this.props.burgers.map((el) => {
-    //        if (el.authorId === )
-    //    })
 
         const following = [];
         this.props.followers.forEach((el) => {
