@@ -10,6 +10,8 @@ class Home extends React.Component {
     componentDidMount() {
         this.props.fetchBurgers();
         window.scrollTo(0, 0);
+        debugger
+        this.props.fetchUser(this.props.currentUser.id)
     }
 
     render() {
@@ -17,6 +19,11 @@ class Home extends React.Component {
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
         );
+
+        // const followersBurgers = [];
+        // this.props.burgers.map((el) => {
+        //     if (el.authorId === thi)
+        // })
 
         const burgers = this.props.burgers.map((el) => {
             return <FlavortownIndexItem key={el.id}

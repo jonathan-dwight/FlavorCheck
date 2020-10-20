@@ -1,12 +1,11 @@
 json.partial! "api/users/user", user: @user
 
 
-# json.followee_id
-# json.followers do 
-#     debugger
-#     @user.followees.each do |followee|
-#         json.set! followee.id do
-#             json.extract! followee, :followee_id 
-#         end
-#     end
-# end
+
+json.followers do 
+    @user.followers.each do |follow|
+        json.set! follow.id do
+            json.extract! follow, :followee_id, :follower_id
+        end
+    end
+end
