@@ -62,16 +62,6 @@ class BurgerForm extends React.Component {
         this.setState({ rating: num });
 
     };
-    // handleHoverInput(e) {
-    //     e.target.style.color = 'orange'
-    // }
-
-    // handleRatingInput(field, value) {
-    //     return (e) => this.setState({ [field]: value })
-    //     //how to have it change input
-    //     //counter of stars?
-    // }   
-
 
     handleSubmit(e) {
         e.preventDefault()
@@ -113,55 +103,44 @@ class BurgerForm extends React.Component {
                         <div className="form-content">
                             <div className="burger-text-picture">
                                 <div className="burger-text">
-                                    <input type="text" className="burger-name" 
-                                    placeholder="What burger are you FlavorChecking?" 
-                                    onChange={this.handleInput("name")}/>
+                                    <div className="burger-header-wrap">
+                                        <input type="text" className="burger-name" 
+                                        placeholder="What burger are you FlavorChecking?" 
+                                        onChange={this.handleInput("name")}/>
 
-                                    <textarea cols="50" rows="5" placeholder="What do you think?" 
-                                    className="text-description" onChange={this.handleInput("description")}></textarea>
+                                        <div className="restaurant-form">
+                                            <select onChange={this.handleRestaurantChange} id="standard-select">
+                                                <option value="default">-- SELECT A BURGER JOINT --</option>
+                                                {restaurants.map((el) => el)}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="restaurant-pic-text">
+                                        <textarea cols="5" rows="5" placeholder="What did you think? Optional - but we want to know the details!" 
+                                        className="text-description" onChange={this.handleInput("description")}></textarea>
+                                        <div className="picture-box">
+                                            <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
+                                            <label htmlFor="file">
+                                                {preview} 
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="picture-box">
-                                    <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file"/>
-                                    <label htmlFor="file">
-                                        {preview} 
-                                    </label>
+                            </div>
+
+                            <div className="form-bottom-box">
+                                <div className="form-input rating">
+                                    <label htmlFor="rating" className="rating-header">Rating (1-5): </label>
+                                    <StarRating
+                                        numberOfStars="5"
+                                        currentRating="0"
+                                        passRating={this.setRating}
+                                    />
                                 </div>
+
+                                
+                                <input type="submit" value="ADD YOUR FLAVORCHECK!" className="flavorcheck-button"/>
                             </div>
-
-                            <div className="form-input rating">
-                                <label htmlFor="rating">Rating:</label>
-                                <StarRating
-                                    numberOfStars="5"
-                                    currentRating="0"
-                                    passRating={this.setRating}
-                                />
-                            </div>
-
-
-                            {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
-                            
-                            
-                            
-                            
-                            {/* <span className={this.handleHoverInput ? "fa fa-star" : "fa fa-star checked" } 
-                            onMouseOver={this.handleHoverInput} 
-                            onClick={this.handleRatingInput('rating', 1)}></span>
-                            
-                            
-                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 2)}></span>
-                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 3)}></span>
-                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 4)}></span>
-                            <span className="fa fa-star" onClick={this.handleRatingInput('rating', 5)}></span> */}
-
-
-                            <div className="restaurant-form">
-                                <p>Burger Joints:</p>
-                                <select className="restaurants" onChange={this.handleRestaurantChange}>
-                                    <option value="default">--select one--</option>
-                                    {restaurants.map((el) => el)}
-                                </select>
-                            </div>
-                            <input type="submit" name="" id=""/>
                             {errors}
                         </div>
                     </form>

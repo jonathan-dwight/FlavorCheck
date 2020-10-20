@@ -14,7 +14,8 @@
 #
 class Burger < ApplicationRecord
     validates :name, presence: true
-    validates :rating, inclusion: {in: [1, 2, 3, 4, 5]}
+    validates :rating, inclusion: {in: [1, 2, 3, 4, 5], message: "must be between 1-5"}
+    # validates :restaurant_id, presence: { message: "must be selected"} - will render two messages
 
     has_one_attached :photo
 

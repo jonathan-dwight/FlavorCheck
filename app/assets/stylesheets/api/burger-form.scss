@@ -59,6 +59,22 @@
   font-family: 'Helvetica', sans-serif;
 }
 
+.burger-header-wrap {
+  display: flex;
+}
+
+.restaurant-form {
+  position: relative;
+  font-family: 'Helvetica', sans-serif;
+  margin-left: 10px; // 60px
+  margin-top: 5px;
+}
+
+.restaurant-pic-text {
+  display: flex;
+  flex-direction: row;
+}
+
 .burger-name {
   border: 1px solid #d6d6d6;
   border-radius: 4px;
@@ -75,8 +91,8 @@
   font-size: 1em;
   vertical-align: top;
   padding: 5px;
-  // width: 80%;
-  // height: 80%;
+  width: 456px;
+  height: 91px;
 }
 
 .label-file {
@@ -90,15 +106,16 @@
 
 .add-picture {
     background-color: #fc0;
-    margin-top: 39px;
+    margin-top: 1px;
     height: 100px;
     width: 100px;
-    margin-left: 8px;
+    margin-left: 10px;
 }
 
 .add-picture:hover {
     background-color:#c60;
     cursor: pointer;
+    transition: .3s;
 }
 
 .preview {
@@ -110,8 +127,46 @@
   color: gray;
 }
 
+.form-input.rating {
+  display: flex
+}
+
+.rating-header {
+  font-family: 'Helvetica', sans-serif;
+  color: black;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 1.3em;
+}
 
 .form-input.rating .rating {
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
+  margin-right: 3px;
+  margin-top: 7px;
+}
+
+.form-bottom-box {
+  display: flex;
+  margin-top: 3px;
+  // justify-content: space-between;
+}
+
+.flavorcheck-button {
+  background-color: #fc0;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  box-sizing: border-box;
+  border: white;
+  margin-top: 8px;
+  margin-left: 14px;
+}
+
+.flavorcheck-button:hover {
+  background-color:#c60;
+  cursor: pointer;
+  transition: .3s;
+  // color: black;
 }
