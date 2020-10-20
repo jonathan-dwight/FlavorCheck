@@ -29,6 +29,10 @@ export const receiveBurgerErrors = (errors) => ({
     errors
 })
 
+export const deleteBurgerErrors = () => ({
+    type: CLEAR_BURGER_ERRORS
+})
+
 
 //thunk action creators
 
@@ -65,5 +69,9 @@ export const deleteBurger = (burgerId) => (dispatch) => {
     }).fail((resp) => {
         dispatch(receiveBurgerErrors(resp.responseJSON))
     })
+}
+
+export const clearBurgerErrors = () => (dispatch) => {
+    return dispatch(deleteBurgerErrors())
 }
 

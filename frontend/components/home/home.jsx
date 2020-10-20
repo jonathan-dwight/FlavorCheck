@@ -10,8 +10,6 @@ class Home extends React.Component {
     componentDidMount() {
         this.props.fetchBurgers();
         window.scrollTo(0, 0);
-        debugger
-        this.props.fetchUser(this.props.currentUser.id)
     }
 
     render() {

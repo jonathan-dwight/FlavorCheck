@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import BurgerForm from "./burgerform"
-import { createBurger } from "../../actions/burger_actions";
+import { createBurger, clearBurgerErrors } from "../../actions/burger_actions";
 import { closeModal } from '../../actions/modal_actions';
 import { fetchUser } from '../../actions/user_actions'
 import { withRouter } from "react-router-dom"
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
         processForm: (form) => dispatch(createBurger(form)),
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         closeModal: () => dispatch(closeModal()),
-        // clearErrors: () => dispatch(clearErrors()) //will handle errors after
+        clearBurgerErrors: () => dispatch(clearBurgerErrors()) //will handle errors after
     })
 }
 

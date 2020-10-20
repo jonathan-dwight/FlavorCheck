@@ -165,5 +165,16 @@
   background-color:#c60;
   cursor: pointer;
   transition: .3s;
-  // color: black;
+}
+
+.burger-errors {
+  font-family: 'Helvetica', sans-serif;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background-color: #d3615d;
+  border-bottom-style: none;
+  width: 99%;
+  padding: 4px;
+  margin-top: 5px;
 }

@@ -26,8 +26,9 @@ class BurgerForm extends React.Component {
         this.props.fetchUser(this.props.sessionId)
     }
 
-    //maybe do restaurant in the backend?
-    //would have to convert to int for rating
+    componentWillUnmount() {
+        this.props.clearBurgerErrors();
+    }
 
     handleInput(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
