@@ -43,7 +43,23 @@ class Home extends React.Component {
     //        if (el.authorId === )
     //    })
 
-        const burgers = this.props.burgers.map((el) => {
+        const following = [];
+        this.props.followers.forEach((el) => {
+            following.push(el.followeeId)
+            if (!following.includes(el.followerId)) {
+                following.push(el.followerId)
+            }
+        })
+        
+
+        const followingBurgers = [];    
+        this.props.burgers.forEach((el) => {
+            if (following.includes(el.authorId)) {
+                followingBurgers.push(el)
+            }
+        })
+
+        const burgers = followingBurgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
                 burger={el} restaurants={this.props.restaurants} users={this.props.users}
                 currentUser={this.props.currentUser}
@@ -57,6 +73,8 @@ class Home extends React.Component {
                 numPosts += 1
             }
         }
+
+        let numFollowers = this.props.followers.length;
 
         let currentName;
         (this.props.currentUser) ? currentName = this.props.currentUser.name : currentName = null;
@@ -90,7 +108,7 @@ class Home extends React.Component {
                                 <p className="small-text">FlavorChecks</p>
                             </div>
                             <div className="inner-box">
-                                <p className="number-text">0</p>
+                                <p className="number-text">{numFollowers}</p>
                                 <p className="small-text">Following</p>
                             </div>
                         </div>
@@ -103,22 +121,4 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-
-// <% if current_user %>
-//       <% followers = {} %>
-//       <% current_user.followers.each do | follow | %>
-//         <% followers = follow.followee_id %>
-//         <% followers = follow.follower_id %>
-// <% end %>
-
-// <script>
-//     window.currentUser = {
-//         "id": <%= current_user.id %>,
-//           "username": "<%= current_user.username %>",
-//           "name": "<%= current_user.name %>",
-//           "email": "<%= current_user.email %>"
-
-//         };
-// </script>
 
