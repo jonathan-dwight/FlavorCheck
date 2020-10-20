@@ -24,8 +24,6 @@ const mapDispatchToProps = (dispatch) => {
         openModal: (modal, id) => (dispatch(openModal(modal, id))),
         fetchBurgers: () => (dispatch(fetchBurgers())),
         fetchRestaurants: () => (dispatch(fetchRestaurants())),
-        fetchUsers: () => (dispatch(fetchUsers())),
-        fetchUser: (id) => (dispatch(fetchUser(id))),
         deleteBurger: (burgerId) => (dispatch(deleteBurger(burgerId)))
     })
 
