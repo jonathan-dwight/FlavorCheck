@@ -9,9 +9,11 @@ import * as RestaurantActions from "./actions/restaurant_actions"
 document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
+
         const preloadedState = {
             entities: {
-                users: { [window.currentUser.id]: window.currentUser }
+                users: { [window.currentUser.id]: window.currentUser },
+                followers: window.currentUser.followers
             },
             session: { id: window.currentUser.id }
         }

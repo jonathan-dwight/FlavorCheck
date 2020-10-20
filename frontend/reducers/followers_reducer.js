@@ -6,6 +6,9 @@ export default (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
+            if (!action.payload.followers) {
+                return {}
+            }
             nextState = action.payload.followers
             return nextState;
         case RECEIVE_ALL_USERS:

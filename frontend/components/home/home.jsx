@@ -103,3 +103,22 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+
+// <% if current_user %>
+//       <% followers = {} %>
+//       <% current_user.followers.each do | follow | %>
+//         <% followers = follow.followee_id %>
+//         <% followers = follow.follower_id %>
+// <% end %>
+
+// <script>
+//     window.currentUser = {
+//         "id": <%= current_user.id %>,
+//           "username": "<%= current_user.username %>",
+//           "name": "<%= current_user.name %>",
+//           "email": "<%= current_user.email %>"
+
+//         };
+// </script>
+
