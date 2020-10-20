@@ -1,0 +1,58 @@
+.delete-form {
+    border-radius: 3px;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    height: max-content;
+    flex-direction: column;
+}
+
+.delete-header {
+  box-sizing: border-box;
+  background-color: #222;
+  width: 100%;
+  padding: 10px;
+  
+}
+
+.delete-header-text {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #fff;
+}
+
+.delete-text-box {
+    display: flex;
+    padding: 25px
+}
+
+
+.delete-text {
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 400;
+}
+
+.delete-post-button {
+  background-color: #a70000;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  box-sizing: border-box;
+  border: white;
+  width: 150px;
+  height: 40px;
+  margin-left: 124px;
+  margin-bottom: 20px;
+}
+
+
+.delete-post-button:hover {
+    background-color:red;
+    color: black;
+    cursor: pointer;
+}
