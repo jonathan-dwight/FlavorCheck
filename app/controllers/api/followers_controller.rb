@@ -3,7 +3,7 @@ class Api::FollowersController < ApplicationController
     def create
         @follow = Follower.new(follow_params)
         if @follow.save 
-            render json: ["Follow Success"]
+            render :show
             # might need to render out an object with info
         end
     end

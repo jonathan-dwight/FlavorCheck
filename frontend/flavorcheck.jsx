@@ -4,7 +4,7 @@ import Root from "./components/root"
 import configureStore from "./store/store"
 import * as BurgerActions from "./actions/burger_actions"
 import * as RestaurantActions from "./actions/restaurant_actions"
-import * as FollowerActions from "./util/follower_api_util"
+import * as FollowerActions from "./actions/follower_action"
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -8,8 +8,9 @@ const receiveFollow = (payload) => ({
     payload
 })
 
-const deleteFollow = (followId) => ({
-    type: DELETE_FOLLOW
+const removeFollow = (followId) => ({
+    type: DELETE_FOLLOW,
+    followId
 })
 
 export const createFollow = (follow) => (dispatch) => {
@@ -20,7 +21,7 @@ export const createFollow = (follow) => (dispatch) => {
 
 export const deleteFollow = (followId) => (dispatch) => {
     return FollowerAPIUtil.deleteFollow(followId).then(() => {
-        dispatch(deleteFollow(resp))
+        dispatch(removeFollow(followId))
     })
 }
 
