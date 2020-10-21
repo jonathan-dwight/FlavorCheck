@@ -19,7 +19,6 @@ class BurgerForm extends React.Component {
         this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
         this.handlePhotoInput = this.handlePhotoInput.bind(this)
         this.setRating = this.setRating.bind(this)
-        // this.handleRatingInput = this.handleRatingInput.bind(this)
     }
 
     componentDidMount() {

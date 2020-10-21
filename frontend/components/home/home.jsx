@@ -43,10 +43,9 @@ class Home extends React.Component {
             <div className="header-text-default">
                 <p>
                     WELCOME TO FLAVORCHECK!! You are currently not following anyone,
-                    please checkout FlavorTown to join the community!! Add a flavor and 
-                    see your post in Flavortown!! FLAVORS ARE WAITING!!
+                    please checkout FlavorTown to join the community!! FLAVORS ARE WAITING!!
                 </p>
-                <img className="header-text-image" src={window.flavortownicon} />
+                <img className="header-text-image" src={window.coverphoto} />
             </div>
         } else {
             headerText = null;
