@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import FollowingName from "./following_name"
 import FlavortownIndexItem from "../flavortown/flavortown_index_item"
 
 class Home extends React.Component {
@@ -15,6 +16,9 @@ class Home extends React.Component {
   
 
     render() {
+        // if (!this.props.burgers) {
+        //     return null
+        // }
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
@@ -51,13 +55,17 @@ class Home extends React.Component {
             headerText = null;
         }
         
-        // let followingNames = [];
-        // let that = this.props.users
-        // this.props.followers.forEach((el) => {
-        //     debugger
-        //     followingNames.push(that[el.followee_id])
-        // })
-        //WORK ON THIS FUNCTIONALITY LATER
+       
+        let that = this.props.users
+        let followingNames;
+
+        if (this.props.followers.length > 0 && Object.values(this.props.users).length > 1) {
+            followingNames = this.props.followers.map((el) => {
+                return <FollowingName  key={el.id} name={that[el.followeeId].username} />
+            })
+        }
+
+
 
         const burgers = followingBurgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
@@ -126,10 +134,8 @@ class Home extends React.Component {
                     {/* WANT TO ONLY DISPLAY MOST RECENT 10 FOLLOWING */}
                     <div className="following-names-container">
                         <div className="following-box">
-                            <h2>Following</h2>
-                            {/* {followingNames.map((el) => {
-                                return <p>{el.name}</p>
-                            })} */}
+                            <h2>Users Following</h2>
+                            {followingNames}
                         </div>
 
                     </div>
