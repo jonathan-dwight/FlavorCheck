@@ -72,7 +72,7 @@ class FlavorTownIndexItem extends React.Component {
         if (currentUser === this.props.burger.authorId) {
             followingButton = null;
         }
-        debugger
+
     
         return (
             <div className="global-review"> 
