@@ -52,13 +52,17 @@ class FlavorTownIndexItem extends React.Component {
         ) : (
             deleteButton = null
         )
-        
-    
+           
         let followingButton;
-        if (this.props.following.includes(this.props.burger.authorId)) {
-            followingButton = <button onClick={() => this.removeFollow(this.props.burger.authorId)}>Unfollow {user.username} </button>
+        if (this.props.following.includes(this.props.burger.authorId) && (currentUser === this.props.burger.authorId)) {
+            followingButton = null;
+        } else if (this.props.following.includes(this.props.burger.authorId)) {
+            followingButton = 
+            <p className="follow-button" onClick={() => this.removeFollow(this.props.burger.authorId)}>unfollow {user.username} </p>
+
         } else {
-          followingButton = <button onClick={() => this.props.createFollow(currentUser, this.props.burger.authorId)}>Follow {user.username} </button>
+          followingButton = 
+          <p className="follow-button" onClick={() => this.props.createFollow(currentUser, this.props.burger.authorId)}>follow {user.username} </p>
         }
     
     
@@ -86,8 +90,6 @@ class FlavorTownIndexItem extends React.Component {
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                             {ratings.map((el) => (el))}
                             {nonCheckArr.map((el) => (el))}
-                            {/* <p className="star-rating-number">({props.burger.rating}/5)</p> */}
-                            {/* will check if i need something */}
                         </div>
     
                     </div>
