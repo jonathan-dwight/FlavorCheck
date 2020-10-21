@@ -56,7 +56,8 @@ class Home extends React.Component {
 
         const burgers = followingBurgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
-                burger={el} restaurants={this.props.restaurants} users={this.props.users}
+                burger={el} restaurants={this.props.restaurants} 
+                users={this.props.users}
                 currentUser={this.props.currentUser}
                 deleteBurger={this.props.deleteBurger} 
                 openModal={this.props.openModal}
