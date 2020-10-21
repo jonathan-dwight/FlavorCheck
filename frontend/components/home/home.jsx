@@ -51,7 +51,13 @@ class Home extends React.Component {
             headerText = null;
         }
         
-        
+        // let followingNames = [];
+        // let that = this.props.users
+        // this.props.followers.forEach((el) => {
+        //     debugger
+        //     followingNames.push(that[el.followee_id])
+        // })
+        //WORK ON THIS FUNCTIONALITY LATER
 
         const burgers = followingBurgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
@@ -65,6 +71,7 @@ class Home extends React.Component {
                 deleteFollow={this.props.deleteFollow}/>
         })
 
+
         let numPosts = 0;
         for (let i = 0; i < this.props.burgers.length; i++) {
             if (this.props.burgers[i].authorId === this.props.sessionId) {
@@ -72,6 +79,7 @@ class Home extends React.Component {
             }
         }
 
+        //might change this to followers at the end
         let numFollowers = this.props.followers.length;
 
         let currentName;
@@ -92,27 +100,40 @@ class Home extends React.Component {
                         {burgers}
                     </div>
                 </div>
-                <ul className="profile-list">
-                    <div className="box">
-                        <div className="profile-username">
-                            <img src={window.avatar} className="avatar-review"/>
-                            <div className="box-username">
-                                <h2>{currentName}</h2>
-                                <p>{currentUserName}</p>
+                <div className="left-home-box">
+                    <ul className="profile-list">
+                        <div className="box">
+                            <div className="profile-username">
+                                <img src={window.avatar} className="avatar-review"/>
+                                <div className="box-username">
+                                    <h2>{currentName}</h2>
+                                    <p>{currentUserName}</p>
+                                </div>
+                            </div>
+                            <div className="box-of-badges">
+                                <div className="inner-box">
+                                    <p className="number-text">{numPosts}</p>
+                                    <p className="small-text">FlavorChecks</p>
+                                </div>
+                                <div className="inner-box">
+                                    <p className="number-text">{numFollowers}</p>
+                                    <p className="small-text">Following</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="box-of-badges">
-                            <div className="inner-box">
-                                <p className="number-text">{numPosts}</p>
-                                <p className="small-text">FlavorChecks</p>
-                            </div>
-                            <div className="inner-box">
-                                <p className="number-text">{numFollowers}</p>
-                                <p className="small-text">Following</p>
-                            </div>
+                    </ul>
+
+                    {/* WANT TO ONLY DISPLAY MOST RECENT 10 FOLLOWING */}
+                    <div className="following-names-container">
+                        <div className="following-box">
+                            <h2>Following</h2>
+                            {/* {followingNames.map((el) => {
+                                return <p>{el.name}</p>
+                            })} */}
                         </div>
+
                     </div>
-                </ul>
+                </div>
             </div>
         )
     }

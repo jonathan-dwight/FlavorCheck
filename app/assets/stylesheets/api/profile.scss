@@ -1,0 +1,130 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f5f2e8;
+}
+
+// .profile-header-container {
+//     display: flex;
+// }
+.profile-header-container {
+    height: 400px;
+}
+
+.profile-header-container img {
+    width: 1032px;
+    z-index: -5;
+    object-fit: cover;
+    height: 400px;
+    z-index: -10;
+    bottom: 50px;
+}
+
+.profile-header {
+    display: flex;
+    position: relative;
+    left: 20px;
+    right: 80px;
+    bottom: 132px;
+    color: white;
+    z-index: 2;
+}
+
+.profile-header img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 40px;
+    overflow: hidden;
+    margin: 7.5px 0;
+}
+
+.profile-header-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.profile-header-text h2 {
+    font-family: 'Helvetica', sans-serif;
+    color: #fff;
+    font-size: 2.2em;
+    line-height: 1.125em;
+    font-weight: 600;
+}
+
+.profile-header-text p {
+    font-family: 'Helvetica', sans-serif;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.profile-header-bottom {
+    display: flex;
+    position: relative;
+    left: 129px;
+    right: 80px;
+    bottom: 138px;
+    color: white;
+    z-index: 3;
+}
+
+.profile-header-bottom-text-1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+.profile-header-bottom-text-2 {
+    margin-left: 30px;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+.profile-bottom-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.burger-post-container {
+    justify-content: space-between;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    // position: relative;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    // align-self: center;
+    position: relative;
+    padding: 16px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.description-side-box {
+    position: relative;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    height: auto;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    position: -webkit-sticky;
+    width: 300px;
+    height: max-content;
+    margin-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    margin-top: 20px;
+    
+}

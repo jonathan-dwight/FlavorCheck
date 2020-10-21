@@ -20,8 +20,10 @@ class FlavorTownIndexItem extends React.Component {
 
     render() {
         let user = this.props.users[this.props.burger.authorId]
-        let restaurant = this.props.restaurants[this.props.burger.restaurantId]
-    
+        let restaurant;
+        (this.props.restaurants[this.props.burger.restaurantId]) ? (
+            restaurant = this.props.restaurants[this.props.burger.restaurantId].name
+        ) : restaurant = null
         
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         let year = this.props.burger.createdAt.slice(0,4)
@@ -70,6 +72,7 @@ class FlavorTownIndexItem extends React.Component {
         if (currentUser === this.props.burger.authorId) {
             followingButton = null;
         }
+        debugger
     
         return (
             <div className="global-review"> 
@@ -80,7 +83,8 @@ class FlavorTownIndexItem extends React.Component {
                         is&nbsp;eating&nbsp;a&nbsp; 
                         <p className="burger-name-restaurant">{this.props.burger.name}&nbsp;</p> 
                         from&nbsp;
-                        <Link to={`restaurant/${restaurant.id}`} className="burger-name-restaurant-link">{restaurant.name}</Link>
+                        <p className="burger-name-restaurant-link">{restaurant}</p>
+                        {/* <Link to={`restaurant/${restaurant.id}`} className="burger-name-restaurant-link">{restaurant.name}</Link> */}
                         {/* HAVE TO THINK IF I NEED A RESTAURANT SHOW PAGE */}
                     </div>
                 </div>
