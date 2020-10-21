@@ -56,7 +56,7 @@ class Profile extends React.Component {
                     </div>
                     <div className="profile-header-bottom">
                         <p className="profile-header-bottom-text-1">{createdBurgers.length} Total</p>
-                        <p className="profile-header-bottom-text-2">2 Following</p>
+                        <p className="profile-header-bottom-text-2">{this.props.followers.length} Following</p>
                         <p className="profile-header-bottom-text-2">2 Followers</p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="description-side-box">
-
+                        <h2>Burger Events Near You</h2>
                     </div>
                 </div>
             </div>
