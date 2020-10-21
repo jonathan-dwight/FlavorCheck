@@ -22,49 +22,54 @@ class FlavorTownIndexItem extends React.Component {
         let user = this.props.users[this.props.burger.authorId]
         let restaurant = this.props.restaurants[this.props.burger.restaurantId]
     
+        
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    
         let year = this.props.burger.createdAt.slice(0,4)
         let month = months[(this.props.burger.createdAt.slice(5,7)) -1]
         let day = this.props.burger.createdAt.slice(8,10)
     
+
         let ratings = [];
         for(let i = 0; i < this.props.burger.rating; i++) {
             ratings.push(<span key={i} className="fa fa-star checked"></span>)
         }
     
+
         let nonCheck = 5 - this.props.burger.rating
         let nonCheckArr = [];
         for (let i = 0; i < nonCheck; i++) {
             nonCheckArr.push(<span key={i} className="fa fa-star"></span>)
         }
     
+
         let image;
         (this.props.burger.photo) ? image = <img className="burger-image" src={this.props.burger.photo}/> 
         : image = null;
     
+
         let currentUser;
         (this.props.currentUser) ? currentUser = this.props.currentUser.id : currentUser = null;
     
+
         let deleteButton;
         (this.props.burger.authorId === currentUser) ? (
             deleteButton = <p onClick={() => this.props.openModal('delete',this.props.burger.id)} className="delete">Delete FlavorCheck</p>
         ) : (
             deleteButton = null
         )
-           
+        
+
         let followingButton;
-        if (this.props.following.includes(this.props.burger.authorId) && (currentUser === this.props.burger.authorId)) {
-            followingButton = null;
-        } else if (this.props.following.includes(this.props.burger.authorId)) {
+        if (this.props.following.includes(this.props.burger.authorId)) {
             followingButton = 
             <p className="follow-button" onClick={() => this.removeFollow(this.props.burger.authorId)}>unfollow {user.username} </p>
-
         } else {
-          followingButton = 
-          <p className="follow-button" onClick={() => this.props.createFollow(currentUser, this.props.burger.authorId)}>follow {user.username} </p>
+            followingButton = 
+            <p className="follow-button" onClick={() => this.props.createFollow(currentUser, this.props.burger.authorId)}>follow {user.username} </p>
         }
-    
+        if (currentUser === this.props.burger.authorId) {
+            followingButton = null;
+        }
     
         return (
             <div className="global-review"> 
