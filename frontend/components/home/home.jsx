@@ -16,9 +16,9 @@ class Home extends React.Component {
   
 
     render() {
-        // if (!this.props.burgers) {
-        //     return null
-        // }
+        if (this.props.burgers === null) {
+            return null
+        }
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>

@@ -14,8 +14,9 @@ export default (state = {}, action) => {
             nextState[action.burger.id] = action.burger
             return nextState;
         case RECEIVE_CURRENT_USER:
+            if (!action.payload.burgers) return null
             nextState = action.payload.burgers
-            return nextState;
+            return nextState
         case REMOVE_BURGER:
             delete nextState[action.burger]
             return nextState;
