@@ -14,23 +14,33 @@ class FlavorTown extends React.Component {
     }
 
     render() {
-
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
         );
+        
+        const following = [];
+        this.props.followers.forEach ((el) => {
+            following.push(el.followeeId)
+        })
 
+        
         const burgers = this.props.burgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
                 burger={el}  restaurants={this.props.restaurants} users={this.props.users}
                 currentUser={this.props.currentUser}
                 deleteBurger={this.props.deleteBurger}
-                openModal={this.props.openModal}/>
-            })
+                openModal={this.props.openModal}
+                following={following}
+                createFollow={this.props.createFollow}
+                deleteFollow={this.props.deleteFollow}
+                following_arr={this.props.followers}/>
+        })
 
         const restaurantList = this.props.restaurantList.map((el) => {
             return <RestaurantIndexItem key={el.id} restaurant={el}/>
         })
+
 
         return (
             <div className="global-container">  

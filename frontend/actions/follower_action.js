@@ -13,8 +13,8 @@ const removeFollow = (followId) => ({
     followId
 })
 
-export const createFollow = (follow) => (dispatch) => {
-    return FollowerAPIUtil.createFollow(follow).then((resp) => {
+export const createFollow = (followerId, followeeId) => (dispatch) => {
+    return FollowerAPIUtil.createFollow(followerId, followeeId).then((resp) => {
         dispatch(receiveFollow(resp))
     })
 }
