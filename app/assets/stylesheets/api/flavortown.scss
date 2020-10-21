@@ -262,3 +262,28 @@
     color: #f93;
     cursor: pointer;
 }
+
+
+.header-text-default {
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text-default p {
+    display: flex;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+    line-height: 120%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-text-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}

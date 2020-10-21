@@ -18,9 +18,11 @@ class Home extends React.Component {
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
-        );
-
+                );
+                
+                
         const following = [];
+        following.push(this.props.currentUser.id)
         this.props.followers.forEach((el) => {
             following.push(el.followeeId)
             if (!following.includes(el.followerId)) {
@@ -28,13 +30,29 @@ class Home extends React.Component {
             }
         })
         
-
         const followingBurgers = [];    
         this.props.burgers.forEach((el) => {
             if (following.includes(el.authorId)) {
                 followingBurgers.push(el)
             }
         })
+
+        let headerText;
+        if (followingBurgers.length === 0) {
+            headerText = 
+            <div className="header-text-default">
+                <p>
+                    WELCOME TO FLAVORCHECK!! You are currently not following anyone,
+                    please checkout FlavorTown to join the community!! Add a flavor and 
+                    see your post in Flavortown!! FLAVORS ARE WAITING!!
+                </p>
+                <img className="header-text-image" src={window.flavortownicon} />
+            </div>
+        } else {
+            headerText = null;
+        }
+        
+        
 
         const burgers = followingBurgers.map((el) => {
             return <FlavortownIndexItem key={el.id}
@@ -70,6 +88,7 @@ class Home extends React.Component {
                         {burgerForm}
                     </div>
                     <div className="home-review-container">
+                        {headerText}
                         {burgers}
                     </div>
                 </div>
