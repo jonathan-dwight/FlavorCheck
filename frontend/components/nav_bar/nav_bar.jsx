@@ -39,7 +39,7 @@ class NavBar extends React.Component {
                         </a>
                     </div>
                     <div className="right-header">
-                        <Link to="/profile">
+                        <Link to={`/profile/${this.props.user.id}`}>
                             <img src={window.avatar} className="avatar"/>
                         </Link>
                         <button onClick={this.handleClick} className="logout">Log Out</button>
