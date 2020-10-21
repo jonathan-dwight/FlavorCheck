@@ -41,7 +41,10 @@ class Home extends React.Component {
                 burger={el} restaurants={this.props.restaurants} users={this.props.users}
                 currentUser={this.props.currentUser}
                 deleteBurger={this.props.deleteBurger} 
-                openModal={this.props.openModal}/>
+                openModal={this.props.openModal}
+                following={following}
+                following_arr={this.props.followers}
+                deleteFollow={this.props.deleteFollow}/>
         })
 
         let numPosts = 0;
