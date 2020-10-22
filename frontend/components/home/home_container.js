@@ -7,15 +7,15 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let sessionId = state.session.id;
-    let burgers;
+    let burgers = Object.values(state.entities.burgers)
     debugger
-    if (state.entities.burgers === null) {
-        burgers = null
-    } else {
-        burgers = Object.values(state.entities.burgers)
-    }
+    // if (state.entities.burgers === null) {
+    //     burgers = null
+    // } else {
+    //     burgers = Object.values(state.entities.burgers)
+    // }
     return ({
-        burgers: burgers,
+        burgers: Object.values(state.entities.burgers),
         currentUser: state.entities.users[sessionId],
         restaurants: state.entities.restaurants,
         users: state.entities.users,
@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
     })
 }
 
-// HAVE TO FETCH BURGERS AND DISPLAY EVERYTHING THAT THE USER IS FOLLOWING
+
 
 const mapDispatchToProps = (dispatch) => {
     return ({

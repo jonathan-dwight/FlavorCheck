@@ -16,16 +16,13 @@ class Home extends React.Component {
   
 
     render() {
-        debugger
-        if (this.props.burgers === null) {
-            return null
-        }
+
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
-                className="burger-form">ADD A FLAVOR</button>
-                );
-                
-                
+            className="burger-form">ADD A FLAVOR</button>
+            );
+            
+            
         const following = [];
         following.push(this.props.currentUser.id)
         this.props.followers.forEach((el) => {
@@ -35,13 +32,13 @@ class Home extends React.Component {
             }
         })
         
-        const followingBurgers = [];    
+        const followingBurgers = [];
         this.props.burgers.forEach((el) => {
             if (following.includes(el.authorId)) {
-                followingBurgers.push(el)
+                    followingBurgers.push(el)
             }
         })
-
+        
         let headerText;
         if (followingBurgers.length === 0) {
             headerText = 
