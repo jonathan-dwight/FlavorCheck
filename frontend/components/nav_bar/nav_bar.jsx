@@ -18,6 +18,12 @@ class NavBar extends React.Component {
         const linkedIn = "https://www.linkedin.com/in/jd-buendia-66ab7483/"
         const github = "https://github.com/jonathan-dwight"
 
+        if (!this.props.user) return null
+
+        let profilePic;
+        (this.props.user.photo) ? profilePic = <img className="avatar" src={this.props.user.photo} />
+        : profilePic = <img src={window.avatar} className="avatar" />;
+
         return (
             <>
                 <div className="nav-bar">
@@ -40,7 +46,7 @@ class NavBar extends React.Component {
                     </div>
                     <div className="right-header">
                         <Link to={`/profile/${this.props.user.id}`}>
-                            <img src={window.avatar} className="avatar"/>
+                            {profilePic}
                         </Link>
                         <button onClick={this.handleClick} className="logout">Log Out</button>
                     </div>

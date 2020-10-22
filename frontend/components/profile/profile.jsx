@@ -14,7 +14,6 @@ class Profile extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handlePhotoInput = this.handlePhotoInput.bind(this)
     }
-    //THIS COULD BE A MODAL IN THE FUTURE
 
     componentDidMount() {
         this.props.fetchBurgers();
@@ -25,7 +24,6 @@ class Profile extends React.Component {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () => {
-            debugger
             this.setState({ imageUrl: reader.result, imageFile: file });
         }
         if (file) {
@@ -37,7 +35,6 @@ class Profile extends React.Component {
 
 
     handleSubmit(e) {
-        debugger
         e.preventDefault()
         const formData = new FormData();
         if (this.state.imageFile) {
@@ -131,7 +128,7 @@ class Profile extends React.Component {
                             <label htmlFor="file">
                                 {profilePic}
                             </label>
-                        <button onClick={this.handleSubmit}>Change Profile Picture</button>
+                        {/* <button onClick={this.handleSubmit}>Change Profile Picture</button> */}
                         </div>
                         
                         

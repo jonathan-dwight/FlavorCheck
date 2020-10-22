@@ -14,6 +14,9 @@ json.users do
     @burgers.each do |burger|
         json.set! burger.author.id do
             json.extract! burger.author, :id, :name , :username
+            if burger.author.photo.attached?
+                json.photo url_for(burger.author.photo)
+            end
         end
     end
 end

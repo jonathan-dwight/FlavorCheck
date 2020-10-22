@@ -47,7 +47,12 @@ class FlavorTownIndexItem extends React.Component {
         let image;
         (this.props.burger.photo) ? image = <img className="burger-image" src={this.props.burger.photo}/> 
         : image = null;
-    
+
+
+
+        let profilePic;
+        (user.photo) ? profilePic = <img className="avatar-review" src={user.photo} /> 
+        : profilePic = <img src={window.avatar} className="avatar-review" />;
 
         let currentUser;
         (this.props.currentUser) ? currentUser = this.props.currentUser.id : currentUser = null;
@@ -77,7 +82,7 @@ class FlavorTownIndexItem extends React.Component {
         return (
             <div className="global-review"> 
                 <div className="review-title">
-                    <img src={window.avatar} className="avatar-review"/>
+                    {profilePic}
                     <div className="review-text">
                         <span className="burger-name-restaurant">{user.username}&nbsp;</span> 
                         is&nbsp;eating&nbsp;a&nbsp; 

@@ -1,5 +1,8 @@
 json.extract! user, :id, :username, :name, :email
 
+if user.photo.attached?
+    json.photo url_for(user.photo)
+end
 
 json.followers do 
     user.followers.each do |follow|

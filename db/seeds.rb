@@ -17,20 +17,40 @@ ActiveRecord::Base.connection.reset_pk_sequence!('burgers')
 #  RESETS THE PRIMARY KEY ID
 
 user1 = User.create(username: "demo_user", name: "Demo User", password: "password", email: "test@aa.io")
-user1_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/mcdouble.jpg")
-user1.photo.attach(io: user1_photo, filename: "img_#{user1.id}.jpg")
 
 user2 = User.create(username: "jonathan_dwight", name: "JD Buendia", password: "password", email: "jd@aa.io")
+user2_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/jd-profile.jpg")
+user2.photo.attach(io: user2_photo, filename: "img_#{user2.id}.jpg")
+
 user3 = User.create(username: "treetop", name: "Tri Ta", password: "password", email: "tri@aa.io")
+user3_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/tri-profile.png")
+user3.photo.attach(io: user3_photo, filename: "img_#{user3.id}.jpg")
+
 user4 = User.create(username: "jackpack", name: "Jacky Li", password: "password", email: "jacky@aa.io")
+user4_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/jacky-profile.png")
+user4.photo.attach(io: user4_photo, filename: "img_#{user4.id}.jpg")
+
 user5 = User.create(username: "petey", name: "Peter Min", password: "password", email: "peter@aa.io")
+user5_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/peter-profile.jpg")
+user5.photo.attach(io: user5_photo, filename: "img_#{user5.id}.jpg")
+
 user6 = User.create(username: "cheetahluva", name: "Chris Lee", password: "password", email: "chris@aa.io")
+user6_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/chris-profile.png")
+user6.photo.attach(io: user6_photo, filename: "img_#{user6.id}.jpg")
+
 user7 = User.create(username: "raveboi", name: "Jon Siu", password: "password", email: "jon@aa.io")
+user7_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/jon-profile.png")
+user7.photo.attach(io: user7_photo, filename: "img_#{user7.id}.jpg")
+
+
+
 
 follow1 = Follower.create(followee_id: 3, follower_id: 2)
 follow2 = Follower.create(followee_id: 4, follower_id: 2)
 follow3 = Follower.create(followee_id: 5, follower_id: 4)
 follow4 = Follower.create(followee_id: 7, follower_id: 4)
+
+
 
 restaurant1 = Restaurant.create(name: "McDonald's")
 restaurant2 = Restaurant.create(name: "In-N-Out")
