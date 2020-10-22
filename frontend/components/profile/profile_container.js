@@ -7,7 +7,6 @@ import Profile from "./profile"
 
 const mapStateToProps = (state, ownProps) => {
 
-    // let user = state.entities.users[ownProps.match.params.userId]
     let burgers;
     if (state.entities.burgers === null) {
         burgers = null

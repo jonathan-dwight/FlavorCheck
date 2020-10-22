@@ -7,13 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let sessionId = state.session.id;
-    let burgers = Object.values(state.entities.burgers)
-    debugger
-    // if (state.entities.burgers === null) {
-    //     burgers = null
-    // } else {
-    //     burgers = Object.values(state.entities.burgers)
-    // }
+  
     return ({
         burgers: Object.values(state.entities.burgers),
         currentUser: state.entities.users[sessionId],
