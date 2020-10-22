@@ -8,7 +8,12 @@ import Profile from "./profile"
 const mapStateToProps = (state, ownProps) => {
 
     // let user = state.entities.users[ownProps.match.params.userId]
-    let burgers = Object.values(state.entities.burgers)
+    let burgers;
+    if (state.entities.burgers === null) {
+        burgers = null
+    } else {
+        burgers = Object.values(state.entities.burgers)
+    }
     let sessionId = state.session.id;
 
     return {

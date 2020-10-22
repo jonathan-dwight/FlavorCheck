@@ -16,6 +16,7 @@ class Home extends React.Component {
   
 
     render() {
+        debugger
         if (this.props.burgers === null) {
             return null
         }

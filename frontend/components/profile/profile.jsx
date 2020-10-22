@@ -7,12 +7,13 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId)
         this.props.fetchBurgers();
+        this.props.fetchUser(this.props.match.params.userId)
+        
     }
 
     render() {
-        
+        if (this.props.burgers === null) return null
         const burgerForm = (
             <button onClick={() => this.props.openModal('burger')}
                 className="burger-form">ADD A FLAVOR</button>
