@@ -6,316 +6,94 @@
    position: absolute;
 }
 
-@media only screen and (max-width: 2000px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 900px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
+.splash-header {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 4;
+   width: 40%;
+   vertical-align: middle;
+   position: relative;
+   height: 600px; //had this at 715 // had at 600
+   padding-left: 3%;
+   padding-right: 3%;
+   margin-bottom: 90px;
    }
 
-   .splash-header img {
-         height: 400px; //275
-         width: 400px; //275
-         border-bottom: 2px solid #e7e7e7;
+.splash-header img {
+   height: 400px; //275
+   width: 400px; //275
+   border-bottom: 2px solid #e7e7e7;
    }
 
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.8rem; //2.2
-      text-align: center;
-      margin-top: 13px;
+.splash-header-text {
+   color: white;
+   font-family: 'Helvetica', sans-serif;
+   font-weight: 600;
+   align-self: center;
+   padding-top: 10px;
+   font-size: 1.8rem; //2.2
+   text-align: center;
+   margin-top: 13px;
+}
+
+@media only screen and (max-width: 2300px) {
+    .splash-header {
+        height: 1100px;
+    }
+}
+
+@media only screen and (max-width: 2100px) {
+    .splash-header {
+        height: 900px;
+    }
+}
+
+
+@media only screen and (max-width: 1900px) {
+    .splash-header {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .splash-header {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .splash-header {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .splash-header {
+        height: 100px;
+    }
+
+    .splash-header img {
+      height: 200px; //275
+      width:  200px; 
+    }
+    .splash-header-text {
+       font-size: 1.4rem;
    }
 }
 
-@media only screen and (max-width: 1700px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 800px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
+@media only screen and (max-width: 500px) {
+    .splash-header {
+        height: 50px;
+    }
 
-   .splash-header img {
-         height: 400px; //275
-         width: 400px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.5rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 1500px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 600px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 400px; //275
-         width: 400px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.5rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 1250px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 400px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 300px; //275
-         width: 300px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.4rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 1000px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 275px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 300px; //275
-         width: 300px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.4rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 900px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 200px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 200px; //275
-         width: 200px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.2rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 800px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 100px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 200px; //275
-         width: 200px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.2rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 700px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      position: relative;
-      height: 20px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 200px; //275
-         width: 200px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.2rem; //2.2
-      text-align: center;
-      margin-top: 13px;
-   }
-
-}
-
-@media only screen and (max-width: 300px)  {
-   .splash-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      width: 40%;
-      vertical-align: middle;
-      // position: relative;
-      // height: 5px; //had this at 715 // had at 600
-      padding-left: 3%;
-      padding-right: 3%;
-      margin-bottom: 90px;
-   }
-
-   .splash-header img {
-         height: 100px; //275
-         width: 200px; //275
-         border-bottom: 2px solid #e7e7e7;
-   }
-
-   .splash-header-text {
-      color: white;
-      font-family: 'Helvetica', sans-serif;
-      font-weight: 600;
-      align-self: center;
-      padding-top: 10px;
-      font-size: 1.2rem; //2.2
-      text-align: center;
-      margin-top: 13px;
+    .splash-header img {
+      height: 150px; //275
+      width:  150px; 
+    }
+    .splash-header-text {
+       font-size: 1.2rem;
    }
 }
 
