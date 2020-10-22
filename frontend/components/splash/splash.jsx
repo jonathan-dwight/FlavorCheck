@@ -25,7 +25,7 @@ class Splash extends React.Component {
         
         const textAbout = "My name is JD Buendia and I am a Full Stack Software Engineer \
         from Los Angeles. This is my clone of Untappd built from the ground-up \
-        with Ruby on Rails, React/Redux, HTML, and CSS. I hope you enjoy the flavors!"
+        with React/Redux, Ruby on Rails, AWS S3, HTML, and CSS. I hope you enjoy the flavors!"
         
         const githubLink = "https://github.com/jonathan-dwight/FlavorCheck"
 

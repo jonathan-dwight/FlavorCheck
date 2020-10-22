@@ -33,6 +33,19 @@ class Profile extends React.Component {
             }
         })
 
+        let headerText;
+        if (createdBurgers.length === 0) {
+            headerText =
+                <div className="burger-text-default">
+                    <p>
+                        You dont have any post yet! Add a flavor and let the community
+                        know what you your flavorchecking!
+                </p>
+                <img className="burger-text-image" src={window.burgerking} />
+                </div>
+        } else {
+            headerText = null;
+        }
 
         const restaurantId = [];
         createdBurgers.forEach((el) => {
@@ -82,6 +95,7 @@ class Profile extends React.Component {
                                 {burgerForm}
                             </div>
                             <div className="global-review-container">
+                                {headerText}
                                 {burgers}
                             </div>
                         </div>
