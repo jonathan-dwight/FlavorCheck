@@ -14,6 +14,7 @@ Follower.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('restaurants')
 ActiveRecord::Base.connection.reset_pk_sequence!('burgers')
+ActiveRecord::Base.connection.reset_pk_sequence!('followers')
 #  RESETS THE PRIMARY KEY ID
 
 user1 = User.create(username: "demo_user", name: "Demo User", password: "password", email: "test@aa.io")
@@ -35,7 +36,7 @@ user5_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/peter-pr
 user5.photo.attach(io: user5_photo, filename: "img_#{user5.id}.jpg")
 
 user6 = User.create(username: "cheetahluva", name: "Chris Lee", password: "password", email: "chris@aa.io")
-user6_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/chris-profile.png")
+user6_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/chris-profile.JPG")
 user6.photo.attach(io: user6_photo, filename: "img_#{user6.id}.jpg")
 
 user7 = User.create(username: "raveboi", name: "Jon Siu", password: "password", email: "jon@aa.io")
@@ -63,6 +64,26 @@ restaurant8 = Restaurant.create(name: "The Counter")
 restaurant9 = Restaurant.create(name: "The Apple Pan")
 restaurant10 = Restaurant.create(name: "Cassell's")
 restaurant11 = Restaurant.create(name: "Plan Check")
+
+restaurant12 = Restaurant.create(name: "Five Guys")
+restaurant13 = Restaurant.create(name: "White Castle")
+restaurant14 = Restaurant.create(name: "Goldburger")
+restaurant15 = Restaurant.create(name: "Burgers Never Say Die")
+restaurant16 = Restaurant.create(name: "Holiday Burger")
+restaurant17 = Restaurant.create(name: "Burgers 99")
+restaurant18 = Restaurant.create(name: "Gordan Ramsay Burger")
+restaurant19 = Restaurant.create(name: "Father's Office")
+restaurant20 = Restaurant.create(name: "Amboy Quality Meats")
+restaurant21 = Restaurant.create(name: "Tripp Burgers")
+restaurant22 = Restaurant.create(name: "The Oinkster")
+restaurant23 = Restaurant.create(name: "Pie 'n Burger")
+restaurant24 = Restaurant.create(name: "The Standing Room Restaurant")
+# restaurant25 = Restaurant.create(name: "Plan Check")
+
+
+
+
+
 
 burger1 = Burger.create(name: "McDouble", rating: 3, description: "It was really good with Mac sauce!!", restaurant_id: restaurant1.id, author_id: user2.id)
 file1 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/mcdouble.jpg")
