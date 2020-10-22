@@ -1,13 +1,11 @@
 .splash img {
    display: flex;
-   // height: 850px;
    top: -85px;
    width: 100%;
    z-index: -1;
    position: absolute;
-   // margin-left: auto;
-   // margin-right: auto
- }
+}
+
 @media only screen and (max-width: 2000px)  {
    .splash-header {
       display: flex;

@@ -1,5 +1,6 @@
 import React from "react"
 import FlavortownIndexItem from "../flavortown/flavortown_index_item"
+import RestaurantIndexItem from "../flavortown/restaurant_index_item"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -29,6 +30,18 @@ class Profile extends React.Component {
         this.props.burgers.forEach((el) => {
             if (el.authorId === this.props.currentUser.id) {
                 createdBurgers.push(el)
+            }
+        })
+
+
+        const restaurantId = [];
+        createdBurgers.forEach((el) => {
+            restaurantId.push(el.restaurantId)
+        })
+
+        const restaurantReview = this.props.restaurantList.map((el) => {
+            if (restaurantId.includes(el.id)) {
+                return <RestaurantIndexItem key={el.id} restaurant={el} />
             }
         })
 
@@ -63,17 +76,25 @@ class Profile extends React.Component {
                 </div>
 
                 <div className="profile-bottom-container">
-                    <div className="burger-post-container">
-                        <div className="global-header">
-                            <h3 className="global-header-text">Your Recent FlavorChecks</h3>
-                            {burgerForm}
+                        <div className="burger-post-container">
+                            <div className="global-header">
+                                <h3 className="global-header-text">Your Recent FlavorChecks</h3>
+                                {burgerForm}
+                            </div>
+                            <div className="global-review-container">
+                                {burgers}
+                            </div>
                         </div>
-                        <div className="global-review-container">
-                            {burgers}
+                    <div className="left-home-box">
+                        <div className="burger-joints-container">
+                            <div className="burger-joints-box">
+                                <h2>Burger Joints You Reviewed</h2>
+                                {restaurantReview}
+                            </div>
                         </div>
-                    </div>
-                    <div className="description-side-box">
-                        <h2>Burger Events Near You</h2>
+                        <div className="description-side-box">
+                            <h2>Burger Events Near You</h2>
+                        </div>
                     </div>
                 </div>
             </div>
