@@ -198,3 +198,21 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.burger-event-text {
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    font-weight: bold;
+    color: #c60;
+    line-height: 130%;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.burger-event-text-inner {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 300;
+    color: #c60;
+    font-size: .8em;
+    margin-bottom: 10px;
+}

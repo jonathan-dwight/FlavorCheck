@@ -45,7 +45,7 @@ class Home extends React.Component {
             <div className="header-text-default">
                 <p>
                     WELCOME TO FLAVORCHECK!! You are currently not following anyone,
-                    please checkout FlavorTown to join the community!! FLAVORS ARE WAITING!!
+                    please checkout FlavorTown to join the community. FLAVORS ARE WAITING!!
                 </p>
                 <img className="header-text-image" src={window.coverphoto} />
             </div>
@@ -103,7 +103,7 @@ class Home extends React.Component {
             <div className="home-container">
                 <div className="home-content">
                     <div className="home-header">
-                        <h3 className="home-header-text">Following's FlavorChecks</h3>
+                        <h3 className="home-header-text">Following FlavorChecks</h3>
                         {burgerForm}
                     </div>
                     <div className="home-review-container">

@@ -108,6 +108,15 @@ class Profile extends React.Component {
                         </div>
                         <div className="description-side-box">
                             <h2>Burger Events Near You</h2>
+                            <a href="https://www.lamag.com/bbb/" target="_blank">
+                                <p className="burger-event-text">Burgers Bourbon + Beer</p>
+                                <p className="burger-event-text-inner">October 27 - October 28</p>
+                            </a>
+                            <a href="https://www.winela.com/calendar/the-burger-battle"
+                                target="_blank">
+                                <p className="burger-event-text">The Burger Battle</p>
+                                <p className="burger-event-text-inner">November 2</p>
+                            </a>
                         </div>
                     </div>
                 </div>
