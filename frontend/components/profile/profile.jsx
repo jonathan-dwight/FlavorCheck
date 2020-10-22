@@ -5,12 +5,47 @@ import RestaurantIndexItem from "../flavortown/restaurant_index_item"
 class Profile extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            imageFile: null,
+            imageUrl: null
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handlePhotoInput = this.handlePhotoInput.bind(this)
     }
+    //THIS COULD BE A MODAL IN THE FUTURE
 
     componentDidMount() {
         this.props.fetchBurgers();
         this.props.fetchUser(this.props.match.params.userId)
-        
+    }
+
+    handlePhotoInput(e) {
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () => {
+            debugger
+            this.setState({ imageUrl: reader.result, imageFile: file });
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
+    }
+
+
+    handleSubmit(e) {
+        debugger
+        e.preventDefault()
+        const formData = new FormData();
+        if (this.state.imageFile) {
+            formData.append('user[photo]', this.state.imageFile);
+        }
+        this.props.updateUser(this.props.currentUser.id, formData).then(() => {
+            console.log("Update Worked!")
+        }).fail(() => { console.log("Not it Did Not")})
     }
 
     render() {
@@ -69,13 +104,37 @@ class Profile extends React.Component {
                 deleteFollow={this.props.deleteFollow}
                 following_arr={this.props.followers} />
         })
+
+        let profilePic; 
+
+        if (this.state.imageUrl) {
+            
+            profilePic = <img src={this.state.imageUrl} className="add-picture" htmlFor="file"/>
+        } else {
+            
+            if (this.props.currentUser.photo) {
+                profilePic = <img src={this.props.currentUser.photo} className="add-picture" />
+            } else {
+                profilePic = <img src={window.avatar} className="add-picture" htmlFor="file" />
+            }
+        }
         
         return (
             <div className="profile-container">
                 <div className="profile-header-container">
                     <img src={window.profilecover}/>
                     <div className="profile-header">
-                        <img src={window.avatar} />
+
+                        {/* PHOTO FOR THE PROFILE PICTURE */}
+                        <div className="picture-box">
+                            <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file" />
+                            <label htmlFor="file">
+                                {profilePic}
+                            </label>
+                        <button onClick={this.handleSubmit}>Change Profile Picture</button>
+                        </div>
+                        
+                        
                         <div className="profile-header-text">
                             <h2>{this.props.currentUser.name}</h2>
                             <p>{this.props.currentUser.username}</p>

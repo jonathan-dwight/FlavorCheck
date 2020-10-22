@@ -16,6 +16,15 @@ class Api::UsersController < ApplicationController
         render :show
     end
 
+    def update
+        @user = User.find_by(id: params[:id])
+            if @user.update(user_params)
+                render :show
+            else
+                render json: ["Could Not Update"]
+            end
+    end
+
     def index
         @users = User.all
         render :index
@@ -24,6 +33,6 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:username, :email, :password, :name)
+        params.require(:user).permit(:username, :email, :password, :name, :photo)
     end
 end

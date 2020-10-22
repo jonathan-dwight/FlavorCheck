@@ -8,6 +8,7 @@ const receiveAllUsers = (payload) => ({
     payload
 })
 
+
 export const fetchUser = (userId) => (dispatch) => {
     return UserAPIUtil.fetchUser(userId).then((resp) => {
         dispatch(receiveCurrentUser(resp))
@@ -19,3 +20,10 @@ export const fetchUsers = () => (dispatch) => {
         dispatch(receiveAllUsers(resp))
     })
 }
+
+export const updateUser = (id, formData) => (dispatch) => {
+    return UserAPIUtil.updateUser(id, formData).then((resp) => {
+        dispatch(receiveCurrentUser(resp))
+    })
+}
+

@@ -20,6 +20,8 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_one_attached :photo
+
     has_many :posts,
         primary_key: :id,
         foreign_key: :author_id,

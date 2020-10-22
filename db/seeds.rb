@@ -17,6 +17,9 @@ ActiveRecord::Base.connection.reset_pk_sequence!('burgers')
 #  RESETS THE PRIMARY KEY ID
 
 user1 = User.create(username: "demo_user", name: "Demo User", password: "password", email: "test@aa.io")
+user1_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/mcdouble.jpg")
+user1.photo.attach(io: user1_photo, filename: "img_#{user1.id}.jpg")
+
 user2 = User.create(username: "jonathan_dwight", name: "JD Buendia", password: "password", email: "jd@aa.io")
 user3 = User.create(username: "treetop", name: "Tri Ta", password: "password", email: "tri@aa.io")
 user4 = User.create(username: "jackpack", name: "Jacky Li", password: "password", email: "jacky@aa.io")

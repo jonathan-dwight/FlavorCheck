@@ -1,5 +1,9 @@
 json.partial! "api/users/user", user: @user
 
+if @user.photo.attached?
+    json.photo url_for(@user.photo)
+end
+
 json.followers do 
     @user.followers.each do |follow|
         json.set! follow.id do

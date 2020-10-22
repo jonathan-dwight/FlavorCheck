@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchUser} from "../../actions/user_actions"
+import { fetchUser, updateUser } from "../../actions/user_actions"
 import { fetchBurgers, deleteBurger } from "../../actions/burger_actions"
 import { createFollow, deleteFollow } from "../../actions/follower_action"
 import { openModal } from '../../actions/modal_actions';
@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 
     return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
+        updateUser: (id, formData) => dispatch(updateUser(id, formData)),
         fetchBurgers: () => (dispatch(fetchBurgers())),
         openModal: (modal, id) => (dispatch(openModal(modal, id))),
         deleteBurger: (burgerId) => (dispatch(deleteBurger(burgerId))),
