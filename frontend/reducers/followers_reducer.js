@@ -8,7 +8,7 @@ export default (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             if (!action.payload.followers) {
-                return {}
+                return state
             }
             nextState = action.payload.followers
             return nextState;
