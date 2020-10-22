@@ -59,7 +59,12 @@ class Home extends React.Component {
 
         if (this.props.followers.length > 0 && Object.values(this.props.users).length > 1) {
             followingNames = this.props.followers.map((el) => {
-                return <FollowingName  key={el.id} name={that[el.followeeId].username} />
+                return <FollowingName  
+                        key={el.id} 
+                        deleteFollow={this.props.deleteFollow}
+                        following_arr={this.props.followers}
+                        name={that[el.followeeId].username} 
+                        user={el}/>
             })
         }
 
