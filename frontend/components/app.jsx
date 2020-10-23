@@ -14,28 +14,30 @@ import Restaurant from "./restaurant/restaurant"
 
 const App = () => {
     return (
-        <div>
-            <Modal />
-            <header>
-                <ProtectedRoute exact path="/home" component={NavBarContainer} />
-                <ProtectedRoute exact path="/flavortown" component={NavBarContainer} />
-                <ProtectedRoute exact path="/profile/:userId" component={NavBarContainer} />
-                <ProtectedRoute exact path="/restaurant/:restaurantId" component={NavBarContainer} />
-            </header>
+        <>
+            <div className="whole-page">
+                <Modal />
+                <header>
+                    <ProtectedRoute exact path="/home" component={NavBarContainer} />
+                    <ProtectedRoute exact path="/flavortown" component={NavBarContainer} />
+                    <ProtectedRoute exact path="/profile/:userId" component={NavBarContainer} />
+                    <ProtectedRoute exact path="/restaurant/:restaurantId" component={NavBarContainer} />
+                </header>
 
-            <Switch>
-                <ProtectedRoute exact path="/home" component={HomeContainer} />
-                <ProtectedRoute exact path="/flavortown" component={FlavorTownContainer} />
-                <ProtectedRoute exact path="/restaurant/:restaurantId" component={Restaurant} />
-                <ProtectedRoute exact path="/profile/:userId" component={ProfileContainer} />
-                <AuthRoute exact path="/" component={SplashContainer} />
-                <Redirect to="/"></Redirect>
-            </Switch>
-            
+                <Switch>
+                    <ProtectedRoute exact path="/home" component={HomeContainer} />
+                    <ProtectedRoute exact path="/flavortown" component={FlavorTownContainer} />
+                    <ProtectedRoute exact path="/restaurant/:restaurantId" component={Restaurant} />
+                    <ProtectedRoute exact path="/profile/:userId" component={ProfileContainer} />
+                    <AuthRoute exact path="/" component={SplashContainer} />
+                    <Redirect to="/"></Redirect>
+                </Switch>
+                
             <footer>
                 <FooterLinks />
             </footer>
-        </div>
+            </div>
+        </>
 
     )
 }
