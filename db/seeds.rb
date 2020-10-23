@@ -43,6 +43,14 @@ user7 = User.create(username: "raveboi", name: "Jon Siu", password: "password", 
 user7_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/jon-profile.png")
 user7.photo.attach(io: user7_photo, filename: "img_#{user7.id}.jpg")
 
+user8 = User.create(username: "damapa", name: "Ryan Mapa", password: "password", email: "ryan@aa.io")
+user8_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/ryan-profile-pic.gif")
+user8.photo.attach(io: user8_photo, filename: "img_#{user8.id}.jpg")
+
+user9 = User.create(username: "lamchops", name: "Lisa Lam", password: "password", email: "lisa@aa.io")
+user9_photo = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/lisa-profile.jpeg")
+user9.photo.attach(io: user9_photo, filename: "img_#{user9.id}.jpg")
+
 
 
 
@@ -69,19 +77,16 @@ restaurant12 = Restaurant.create(name: "Five Guys")
 restaurant13 = Restaurant.create(name: "White Castle")
 restaurant14 = Restaurant.create(name: "Goldburger")
 restaurant15 = Restaurant.create(name: "Burgers Never Say Die")
-restaurant16 = Restaurant.create(name: "Holiday Burger")
+restaurant16 = Restaurant.create(name: "Gordan Ramsay Burger")
 restaurant17 = Restaurant.create(name: "Burgers 99")
-restaurant18 = Restaurant.create(name: "Gordan Ramsay Burger")
+restaurant18 = Restaurant.create(name: "Holiday Burger")
 restaurant19 = Restaurant.create(name: "Father's Office")
 restaurant20 = Restaurant.create(name: "Amboy Quality Meats")
 restaurant21 = Restaurant.create(name: "Tripp Burgers")
 restaurant22 = Restaurant.create(name: "The Oinkster")
 restaurant23 = Restaurant.create(name: "Pie 'n Burger")
-restaurant24 = Restaurant.create(name: "The Standing Room Restaurant")
+restaurant24 = Restaurant.create(name: "The Standing Room")
 restaurant25 = Restaurant.create(name: "Burgers and Brew")
-
-
-
 
 
 
@@ -133,6 +138,71 @@ burger10.photo.attach(io: file10, filename: "img_#{burger10.id}.jpg")
 burger11 = Burger.create(name: "Truffle Mushroom Swiss", rating: 5, description: "I love TRUFFLE", restaurant_id: restaurant11.id, author_id: user4.id)
 file11 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/truffle-burger.jpg")
 burger11.photo.attach(io: file11, filename: "img_#{burger11.id}.jpg")
+
+
+
+
+
+burger12 = Burger.create(name: "Bacon Burger", rating: 3, description: "I love how they give you free peanuts", restaurant_id: restaurant12.id, author_id: user7.id)
+file12 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/five-guys-burger.jpg")
+burger12.photo.attach(io: file12, filename: "img_#{burger12.id}.jpg")
+
+
+burger13 = Burger.create(name: "Sausage Breakfast Slider", rating: 4, description: "I had 10...", restaurant_id: restaurant13.id, author_id: user5.id)
+file13 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/white-castle-burger.jpg")
+burger13.photo.attach(io: file13, filename: "img_#{burger13.id}.jpg")
+
+burger14 = Burger.create(name: "Gold Burger", rating: 5, description: "I will be a returning customer forsure", restaurant_id: restaurant14.id, author_id: user3.id)
+file14 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/goldburger.jpg")
+burger14.photo.attach(io: file14, filename: "img_#{burger14.id}.jpg")
+
+burger15 = Burger.create(name: "Double Smashurger", rating: 5, description: "Never had a smashburger like this!!", restaurant_id: restaurant15.id, author_id: user6.id)
+file15 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/burgers-never-say-die.jpg")
+burger15.photo.attach(io: file15, filename: "img_#{burger15.id}.jpg")
+
+burger16 = Burger.create(name: "Brunch Burger", rating: 4, description: "Just look at it...", restaurant_id: restaurant16.id, author_id: user2.id)
+file16 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/gordan-ramsay-burger.jpg")
+burger16.photo.attach(io: file16, filename: "img_#{burger16.id}.jpg")
+
+burger17 = Burger.create(name: "Cheeseburger", rating: 4, description: "This picture does not do it justice", restaurant_id: restaurant17.id, author_id: user9.id)
+file17 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/burgers99.jpg")
+burger17.photo.attach(io: file17, filename: "img_#{burger17.id}.jpg")
+
+
+
+burger18 = Burger.create(name: "Pastrami burger", rating: 4, description: "The best secret in the valley!!", restaurant_id: restaurant18.id, author_id: user4.id)
+file18 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/holiday-burger.jpg")
+burger18.photo.attach(io: file18, filename: "img_#{burger18.id}.jpg")
+
+burger19 = Burger.create(name: "The Fo Burger", rating: 2, description: "It was good but it's a little too expensive for me", restaurant_id: restaurant19.id, author_id: user5.id)
+file19 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/father's-office.jpg")
+burger19.photo.attach(io: file19, filename: "img_#{burger19.id}.jpg")
+
+burger20 = Burger.create(name: "DH Burger", rating: 3, description: "Expensive but LOOK AT THAT MEAT", restaurant_id: restaurant20.id, author_id: user6.id)
+file20 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/amboy-quality-meats.jpg")
+burger20.photo.attach(io: file20, filename: "img_#{burger20.id}.jpg")
+
+burger21 = Burger.create(name: "Cheeseburger", rating: 5, description: "Just randomly saw this stand and it was the best!", restaurant_id: restaurant21.id, author_id: user4.id)
+file21 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/tripp-burgers.jpg")
+burger21.photo.attach(io: file21, filename: "img_#{burger21.id}.jpg")
+
+burger22 = Burger.create(name: "Pork Adobo Burger", rating: 4, description: "This burger is slept on", restaurant_id: restaurant22.id, author_id: user2.id)
+file22 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/the-oinkster.jpg")
+burger22.photo.attach(io: file22, filename: "img_#{burger22.id}.jpg")
+
+burger23 = Burger.create(name: "Cheeseburger", rating: 3, description: "Gave me the diner vibes", restaurant_id: restaurant23.id, author_id: user7.id)
+file23 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/pie-n-burger.jpg")
+burger23.photo.attach(io: file23, filename: "img_#{burger23.id}.jpg")
+
+burger24 = Burger.create(name: "The Chance Burger", rating: 4, description: "Trust me... you need to give this burger a chance!", restaurant_id: restaurant24.id, author_id: user9.id)
+file24 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/the-standing-room.jpg")
+burger24.photo.attach(io: file24, filename: "img_#{burger24.id}.jpg")
+
+burger25 = Burger.create(name: "Aged Cheddar and Bacon Burger", rating: 5, description: "This is the best burger hands down", restaurant_id: restaurant25.id, author_id: user8.id)
+file25 = open("https://flavorcheck-seed.s3-us-west-1.amazonaws.com/burgers-and-brew.jpg")
+burger25.photo.attach(io: file25, filename: "img_#{burger25.id}.jpg")
+
+
 
 
 
