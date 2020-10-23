@@ -16,7 +16,6 @@ export default (state = {}, action) => {
         case RECEIVE_BURGERS:
             // nextState = action.payload.users
             // return nextState
-            // debugger
             return Object.assign(action.payload.users, nextState)
             // return nextState     
         default:
