@@ -12,10 +12,10 @@ json.followers do
     end
 end
 
-json.burgers do 
-    @user.posts.each do |burger|
-        json.set! burger.id do 
-            json.extract! burger, :id, :name, :rating, :description, :restaurant_id, :author_id, :created_at
-        end
-    end
-end
+# json.burgers do 
+#     @user.posts.each do |burger|
+#         json.set! burger.id do 
+#             json.extract! burger, :id, :name, :rating, :description, :restaurant_id, :author_id, :created_at
+#         end
+#     end
+# end
