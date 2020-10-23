@@ -142,7 +142,6 @@ class Profile extends React.Component {
                     <div className="profile-header-bottom">
                         <p className="profile-header-bottom-text-1">{createdBurgers.length} Total</p>
                         <p className="profile-header-bottom-text-2">{this.props.followers.length} Following</p>
-                        <p className="profile-header-bottom-text-2">2 Followers</p>
                     </div>
                 </div>
 
@@ -165,7 +164,7 @@ class Profile extends React.Component {
                             </div>
                         </div>
                         <div className="description-side-box">
-                            <h2>Burger Events Near You</h2>
+                            <h2>Burger Events Coming Up</h2>
                             <a href="https://www.lamag.com/bbb/" target="_blank">
                                 <p className="burger-event-text">Burgers Bourbon + Beer</p>
                                 <p className="burger-event-text-inner">October 27 - October 28</p>
@@ -175,6 +174,12 @@ class Profile extends React.Component {
                                 <p className="burger-event-text">The Burger Battle</p>
                                 <p className="burger-event-text-inner">November 2</p>
                             </a>
+                            <p className="burger-event-text">Wine and Grill</p>
+                            <p className="burger-event-text-inner">December 11</p>
+                            <p className="burger-event-text">Burger Countdown NYE</p>
+                            <p className="burger-event-text-inner">December 31</p>
+                            <p className="burger-event-text">Suns Out Buns Out</p>
+                            <p className="burger-event-text-inner">April 19</p>
                         </div>
                     </div>
                 </div>

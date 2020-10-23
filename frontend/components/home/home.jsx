@@ -90,7 +90,6 @@ class Home extends React.Component {
             }
         }
 
-        //might change this to followers at the end
         let numFollowers = this.props.followers.length;
 
         let currentName;
@@ -98,6 +97,13 @@ class Home extends React.Component {
         
         let currentUserName;
         (this.props.currentUser) ? currentUserName = this.props.currentUser.username : currentUserName = null;
+
+        let profilePic;
+        if (this.props.currentUser.photo) {
+            profilePic = <img src={this.props.currentUser.photo} className="avatar-review" />
+        } else {
+            profilePic = <img src={window.avatar} className="avatar-review" htmlFor="file" />
+        }
 
         return (
             <div className="home-container">
@@ -115,7 +121,7 @@ class Home extends React.Component {
                     <ul className="profile-list">
                         <div className="box">
                             <div className="profile-username">
-                                <img src={window.avatar} className="avatar-review"/>
+                                {profilePic}
                                 <div className="box-username">
                                     <h2>{currentName}</h2>
                                     <p>{currentUserName}</p>
@@ -134,7 +140,6 @@ class Home extends React.Component {
                         </div>
                     </ul>
 
-                    {/* WANT TO ONLY DISPLAY MOST RECENT 10 FOLLOWING */}
                     <div className="following-names-container">
                         <div className="following-box">
                             <h2>Users Following</h2>
