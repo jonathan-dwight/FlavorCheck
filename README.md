@@ -26,6 +26,8 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 
 ## Features
 
+The main purpose of FlavorCheck was to be able to clone a website, not only for appearance but by its core features and functionality as well. This single page web application was designed and developed within a two-week time period. Below are all the main features I was able to implememnt and some future features I plan to have running on the website.
+
 ### Login
 
 * Secure User Authorization using BCrypt hashing
@@ -42,11 +44,13 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 * Profile redirects to the profile page
 * Logout signs out users and redirects back to the splash
 
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/navbar.png)
+
 ### Following Feed Page
 
 * Shows the posts of the people a user is following or if this user is not following anyone shows a description to follow users
-* User can follow and unfollow from the post or from the User's Following Tab
-* Following Tab automatically populates with the usernames of who the user is following 
+* User can follow and unfollow from the post or from the user's following tab
+* Following tab automatically populates with the usernames of who the user is following 
 
 [![Image from Gyazo](https://i.gyazo.com/75d23d185b7d3a9356e1d3c715900a2a.gif)](https://gyazo.com/75d23d185b7d3a9356e1d3c715900a2a)
 
@@ -55,6 +59,7 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 * Shows the global feed for all the post and users can decide if they want to follow that user
 * Users can see all the burger joints they can review
 
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/global-profile.png)
 
 ### Add a Flavor Form 
 
@@ -71,6 +76,7 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 * A modal opens up and confirms if you want to delete the post
 * Post is removed in all pages it would be displayed on
 
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/Delete-pic.png)
 
 ### Profile Page
 
@@ -78,4 +84,24 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 * Shows the number of followers
 * User is allowed to change profile picture
 
-[![Image from Gyazo](https://i.gyazo.com/672ec54c91f84a85af1aa620a657da33.gif)](https://gyazo.com/672ec54c91f84a85af1aa620a657da33)
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/profile-page.gif)
+
+## Future Features
+
+* Show the number of followers a user has and who they are
+* Restaurant show page where users can see all the burgers that have been reviewed there
+* Allow users to add restaurants they want to review
+* Search functionality for restaurants and users
+
+
+## Code Snippets
+
+### Profile Pic Code
+
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/code-snippet-profile-pic.png)
+
+
+### Star Rating Code 
+
+
+![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/star-ratingsnippet.png)
