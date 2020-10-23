@@ -26,7 +26,7 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 
 ## Features
 
-The main purpose of FlavorCheck was to be able to clone a website, not only for appearance but by its core features and functionality as well. This single page web application was designed and developed within a two-week time period. Below are all the main features I was able to implememnt and some future features I plan to have running on the website.
+The main purpose of FlavorCheck was to be able to clone a website, not only for appearance but by its core features and functionality as well. This single page web application was designed and developed within a two-week time period. Below are all the main features I was able to implement and some future features I plan to have running soon.
 
 ### Login
 
@@ -98,11 +98,11 @@ The main purpose of FlavorCheck was to be able to clone a website, not only for 
 
 ### Star Rating Code 
 
-I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating wanted. My first initial problem came with the value would only be changed when hover over and it wasnt set. This required me to refactor and sett a value to each star and making sure when I clicked it, the actual rating would change, and not when I just hover it. 
+I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating desired. My first initial problem came with the value changing when hovered over. This required me to refactor and set a value to each star and making sure when I clicked it, the actual rating would change, and not when I just hover it. 
 
-When I fixed this, more challenges came aloong and that the value would reset it when I hover and I would have to reclick the rating everytime. I was able to have this fixed by have a hovervalue and rating value in my set and creating three different functions to handle hover, setting, and mousing out. I made sure the return function had the right listners on them and used the proper function.
+When I fixed this, more challenges came along and that the value would reset it when I hover and I would have to reclick the rating everytime. I was able to have this fixed by having a hovervalue and rating value in my set and creating three different functions to handle hover, setting, and mousing out. I made sure the return function had the right listners on them and used the proper function.
 
-I was forced to think differently about how to approach this problem and think of new solutions on how to handle hover, click, and have the value persist while until they hit submit.
+I was forced to think differently about how to approach this problem and think of new solutions on how to handle hover, click, and have the value persist until they hit submit.
 
 
 ![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/star-ratingsnippet.png)
