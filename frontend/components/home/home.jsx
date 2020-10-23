@@ -128,18 +128,18 @@ class Home extends React.Component {
                                 </div>
                             </div>
                             <div className="box-of-badges">
-                                <div className="inner-box">
-                                    <Link to={`/profile/${this.props.currentUser.id}`}>
-                                        <p className="number-text">{numPosts}</p>
-                                        <p className="small-text">FlavorChecks</p>
-                                    </Link>
-                                </div>
-                                <div className="inner-box">
-                                    <Link to={`/profile/${this.props.currentUser.id}`}>
-                                        <p className="number-text">{numFollowers}</p>
-                                        <p className="small-text">Following</p>
-                                    </Link>
-                                </div>
+                                <Link to={`/profile/${this.props.currentUser.id}`}>
+                                    <div className="inner-box">
+                                            <p className="number-text">{numPosts}</p>
+                                            <p className="small-text">FlavorChecks</p>
+                                    </div>
+                                </Link>
+                                <Link to={`/profile/${this.props.currentUser.id}`}>
+                                    <div className="inner-box">
+                                            <p className="number-text">{numFollowers}</p>
+                                            <p className="small-text">Following</p>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </ul>
