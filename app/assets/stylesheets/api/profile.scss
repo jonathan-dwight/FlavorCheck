@@ -26,7 +26,7 @@
     right: 80px;
     bottom: 132px;
     color: white;
-    z-index: 2;
+
 }
 
 .profile-header img {
@@ -73,6 +73,7 @@
     font-family: 'Helvetica', sans-serif;
     font-weight: 300;
     font-size: 1.4em;
+    z-index: 4;
 }
 
 .profile-header-bottom-text-2 {
@@ -80,6 +81,7 @@
     font-family: 'Helvetica', sans-serif;
     font-weight: 300;
     font-size: 1.4em;
+    z-index: 4;
 }
 
 .profile-bottom-container {
@@ -216,3 +218,38 @@
     font-size: .8em;
     margin-bottom: 10px;
 }
+
+.add-profile-picture {
+    background-color: #fc0;
+    margin-top: 1px;
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    z-index: 2;
+}
+
+.add-profile-picture:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.profile-pic-button {
+    font-family: 'Helvetica', sans-serif;
+    width: 165px;
+    background-color:  black;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 10;
+    position: absolute;
+    margin-left: 14px;
+}
+
+.profile-pic-button:hover {
+    cursor: pointer;
+    background-color: #fc0;
+    // margin-left: 10px;
+}
+

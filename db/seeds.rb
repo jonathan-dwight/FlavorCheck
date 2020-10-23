@@ -78,7 +78,7 @@ restaurant21 = Restaurant.create(name: "Tripp Burgers")
 restaurant22 = Restaurant.create(name: "The Oinkster")
 restaurant23 = Restaurant.create(name: "Pie 'n Burger")
 restaurant24 = Restaurant.create(name: "The Standing Room Restaurant")
-# restaurant25 = Restaurant.create(name: "Plan Check")
+restaurant25 = Restaurant.create(name: "Burgers and Brew")
 
 
 

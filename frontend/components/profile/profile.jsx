@@ -8,7 +8,7 @@ class Profile extends React.Component {
 
         this.state = {
             imageFile: null,
-            imageUrl: null
+            imageUrl: null,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -41,9 +41,8 @@ class Profile extends React.Component {
         if (this.state.imageFile) {
             formData.append('user[photo]', this.state.imageFile);
         }
-        this.props.updateUser(this.props.currentUser.id, formData).then(() => {
-            console.log("Update Worked!")
-        }).fail(() => { console.log("Not it Did Not")})
+        this.props.updateUser(this.props.currentUser.id, formData)
+        this.setState({ imageUrl: null })
     }
 
     render() {
@@ -72,7 +71,7 @@ class Profile extends React.Component {
                 <div className="burger-text-default">
                     <p>
                         You dont have any post yet! Add a flavor and let the community
-                        know what you your flavorchecking!
+                        know what you are flavorchecking!
                 </p>
                 <img className="burger-text-image" src={window.burgerking} />
                 </div>
@@ -104,32 +103,34 @@ class Profile extends React.Component {
         })
 
         let profilePic; 
-
-        if (this.state.imageUrl) {
-            
-            profilePic = <img src={this.state.imageUrl} className="add-picture" htmlFor="file"/>
+        if (this.state.imageUrl) {   
+            profilePic = <img src={this.state.imageUrl} className="add-profile-picture" htmlFor="file"/>
         } else {
-            
             if (this.props.currentUser.photo) {
-                profilePic = <img src={this.props.currentUser.photo} className="add-picture" />
+                profilePic = <img src={this.props.currentUser.photo} className="add-profile-picture" />
             } else {
-                profilePic = <img src={window.avatar} className="add-picture" htmlFor="file" />
+                profilePic = <img src={window.avatar} className="add-profile-picture" htmlFor="file" />
             }
         }
-        
+
+        let updateProfilePic;
+        (this.state.imageFile && this.state.imageUrl !== null) ? ( updateProfilePic =
+            <button onClick={this.handleSubmit} className="profile-pic-button">Change Profile Picture</button>
+            ) : ( updateProfilePic = null )
+                
+
         return (
             <div className="profile-container">
                 <div className="profile-header-container">
                     <img src={window.profilecover}/>
                     <div className="profile-header">
 
-                        {/* PHOTO FOR THE PROFILE PICTURE */}
                         <div className="picture-box">
                             <input type="file" name="file" id="file" onChange={this.handlePhotoInput} className="label-file" />
                             <label htmlFor="file">
                                 {profilePic}
+                                {updateProfilePic}
                             </label>
-                        {/* <button onClick={this.handleSubmit}>Change Profile Picture</button> */}
                         </div>
                         
                         
