@@ -66,16 +66,16 @@ Link to Live App: [FlavorCheck](https://flavorcheck.herokuapp.com/#/)
 [![Image from Gyazo](https://i.gyazo.com/d800a64bad544a973baa5c1ef5807daf.gif)](https://gyazo.com/d800a64bad544a973baa5c1ef5807daf)
 
 
-## Delete a Flavor
+### Delete a Flavor
 
 * A modal opens up and confirms if you want to delete the post
 * Post is removed in all pages it would be displayed on
 
 
-## Profile Page
+### Profile Page
 
 * Displays all the post the user created and the restaurants they have reviewed
 * Shows the number of followers
 * User is allowed to change profile picture
 
-[![Image from Gyazo](https://i.gyazo.com/e593e68fed73ea223edaf4d140d07299.gif)](https://gyazo.com/e593e68fed73ea223edaf4d140d07299)
+[![Image from Gyazo](https://i.gyazo.com/672ec54c91f84a85af1aa620a657da33.gif)](https://gyazo.com/672ec54c91f84a85af1aa620a657da33)
