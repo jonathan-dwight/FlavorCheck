@@ -45,7 +45,7 @@ class Home extends React.Component {
             <div className="header-text-default">
                 <p>
                     WELCOME TO FLAVORCHECK!! You are currently not following anyone,
-                    please checkout FlavorTown to join the community. FLAVORS ARE WAITING!!
+                    please checkout Flavor Town to join the community. FLAVORS ARE WAITING!!
                 </p>
                 <img className="header-text-image" src={window.coverphoto} />
             </div>
@@ -129,12 +129,16 @@ class Home extends React.Component {
                             </div>
                             <div className="box-of-badges">
                                 <div className="inner-box">
-                                    <p className="number-text">{numPosts}</p>
-                                    <p className="small-text">FlavorChecks</p>
+                                    <Link to={`/profile/${this.props.currentUser.id}`}>
+                                        <p className="number-text">{numPosts}</p>
+                                        <p className="small-text">FlavorChecks</p>
+                                    </Link>
                                 </div>
                                 <div className="inner-box">
-                                    <p className="number-text">{numFollowers}</p>
-                                    <p className="small-text">Following</p>
+                                    <Link to={`/profile/${this.props.currentUser.id}`}>
+                                        <p className="number-text">{numFollowers}</p>
+                                        <p className="small-text">Following</p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
