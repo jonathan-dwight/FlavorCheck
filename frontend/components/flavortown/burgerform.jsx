@@ -1,5 +1,9 @@
 import React from "react";
 import StarRating from "./star-rating"
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
+import * as burgerData from "./10815-walking-burger.json"
+
 
 
 class BurgerForm extends React.Component {
@@ -12,7 +16,8 @@ class BurgerForm extends React.Component {
             restaurant_id: "",
             author_id: this.props.sessionId,
             imageFile: null,
-            imageUrl: null
+            imageUrl: null,
+            loading: false
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -65,6 +70,7 @@ class BurgerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        this.setState({ loading: true })
         const formData = new FormData();
         formData.append('burger[name]', this.state.name);
         formData.append('burger[description]', this.state.description);
@@ -92,7 +98,16 @@ class BurgerForm extends React.Component {
         const preview = this.state.imageUrl ? (<img src={this.state.imageUrl} className="add-picture"/> 
         ) : (<img src={window.checkin} className="add-picture" htmlFor="file" />) 
 
-        return(
+        const defaultOptions = {
+            loop: true,
+            autoplay: true,
+            animationData: burgerData.default,
+            rendererSettings: {
+                preserveAspectRatio: "xMidYMid slice"
+            }
+        };
+
+        let display = !this.state.loading ? (
             <div className="burger-form-box">
                 <div className="inner-burger-form-box">
                     <form onSubmit={this.handleSubmit}>
@@ -145,6 +160,18 @@ class BurgerForm extends React.Component {
                         </div>
                     </form>
                 </div>
+            </div>
+        ) : (
+                <FadeIn>
+                    <div className="d-flex justify-content-center align-items-center">
+                            <Lottie options={defaultOptions} height={300} width={300} />
+                    </div>
+                </FadeIn>
+        )
+
+        return (
+            <div>
+                {display}
             </div>
         )
     }
