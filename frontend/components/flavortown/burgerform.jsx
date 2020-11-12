@@ -164,7 +164,7 @@ class BurgerForm extends React.Component {
         ) : (
                 <FadeIn>
                     <div className="d-flex justify-content-center align-items-center">
-                            <Lottie options={defaultOptions} height={120} width={120} />
+                            <Lottie options={defaultOptions} height={300} width={300} />
                     </div>
                 </FadeIn>
         )
