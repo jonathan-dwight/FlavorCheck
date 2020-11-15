@@ -112,6 +112,6 @@ I was forced to think differently about how to approach this problem and think o
 
 I implemented the feature to allow a user to upload a profile picture and have it display on all the post that they write. This also allows you to update it in real time and see a preview of it prior to uploading. A button pops up when the image changes allowing to user to change their picture with a click. I faced challenges with this because I was having a hard time for the preview to come up and have the button only appear when they change the image. Another challenge was trying to get the button to disappear after the photo has been changed.
 
-I was able to solve this solution by being more creating with how I used conditional logic to check my state.
+I was able to solve this solution by being more creative with how I used conditional logic to check my state.
 
 ![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/code-snippet-profile-pic.png)
