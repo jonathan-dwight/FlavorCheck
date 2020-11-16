@@ -98,7 +98,7 @@ The main purpose of FlavorCheck was to be able to clone a website, not only for 
 
 ### Star Rating Code 
 
-I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating desired. My first initial problem came with the value changing when hovered over. This required me to refactor and set a value to each star and making sure when I clicked it, the actual rating would change, and not when I just hover it. 
+I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating desired. My first initial problem came with the value changing when hovered over. This required me to refactor and set a value to each star and make sure when I clicked it, the actual rating would change, and not when I just hover it. 
 
 When I fixed this, more challenges came along and that the value would reset it when I hover and I would have to reclick the rating everytime. I was able to have this fixed by having a hovervalue and rating value in my set and creating three different functions to handle hover, setting, and mousing out. I made sure the return function had the right listners on them and used the proper function.
 
