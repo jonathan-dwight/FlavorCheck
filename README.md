@@ -98,7 +98,7 @@ The main purpose of FlavorCheck was to be able to clone a website, not only for 
 
 ### Star Rating Code 
 
-I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating desired. My first initial problem came with the value changing when hovered over. This required me to refactor and set a value to each star and making sure when I clicked it, the actual rating would change, and not when I just hover it. 
+I implemented a star rating for my add a flavor form. I faced many challenges for this feature. One was trying to account the hover and setting state with the actual rating desired. My first initial problem came with the value changing when hovered over. This required me to refactor and set a value to each star and make sure when I clicked it, the actual rating would change, and not when I just hover it. 
 
 When I fixed this, more challenges came along and that the value would reset it when I hover and I would have to reclick the rating everytime. I was able to have this fixed by having a hovervalue and rating value in my set and creating three different functions to handle hover, setting, and mousing out. I made sure the return function had the right listners on them and used the proper function.
 
@@ -112,6 +112,6 @@ I was forced to think differently about how to approach this problem and think o
 
 I implemented the feature to allow a user to upload a profile picture and have it display on all the post that they write. This also allows you to update it in real time and see a preview of it prior to uploading. A button pops up when the image changes allowing to user to change their picture with a click. I faced challenges with this because I was having a hard time for the preview to come up and have the button only appear when they change the image. Another challenge was trying to get the button to disappear after the photo has been changed.
 
-I was able to solve this solution by being more creating with how I used conditional logic to check my state.
+I was able to solve this solution by being more creative with how I used conditional logic to check my state.
 
 ![image](https://github.com/jonathan-dwight/FlavorCheck/blob/master/app/assets/images/code-snippet-profile-pic.png)
