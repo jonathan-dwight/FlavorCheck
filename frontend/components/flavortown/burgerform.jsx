@@ -82,6 +82,8 @@ class BurgerForm extends React.Component {
         }
         this.props.processForm(formData).then(() => {
             this.props.closeModal()
+        }).fail(() => {
+            this.setState({ loading: false, restaurant_id: "" })
         })
     }
 
@@ -121,7 +123,8 @@ class BurgerForm extends React.Component {
                                     <div className="burger-header-wrap">
                                         <input type="text" className="burger-name" 
                                         placeholder="What burger are you FlavorChecking?" 
-                                        onChange={this.handleInput("name")}/>
+                                        onChange={this.handleInput("name")}
+                                        />
 
                                         <div className="restaurant-form">
                                             <select onChange={this.handleRestaurantChange} id="standard-select">
